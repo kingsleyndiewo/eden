@@ -1,0 +1,16 @@
+INTRODUCTION
+
+Creation Test is a simple 3D scene that demonstrates the ease of
+using the Eden Gaming Engine in loading a world. In the advanced
+feature test we explore the generation of terrain in place of a
+loaded world. In the physics test we explore the ODE engine's
+capabilities and implement a fixed camera in the world.
+
+Features Demonstrated:
+
+    - Applying ODE physics to the world.
+    - Using a custom Eden XML file - odePhysics.xml
+    - Fixed camera scene.
+    - All other features of the advanced feature test.
+    
+NOTE: In the physics test we don't have the default purple cube.

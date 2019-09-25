@@ -1,0 +1,25 @@
+INTRODUCTION
+
+Eve Test is a moderately advanced 3D scene that demonstrates
+the ease of using the Eden Gaming Engine's more practical features
+in actual development of games.
+
+With the Eve class, all the features of the Creation and Genesis
+Classes are available, with the addition of a default main actor
+as in Adam. For Eve however, the default actor is variable and can
+be changed by mouse selection in the 3D scene.
+
+Two actors are loaded, a geometry model and clicking 3D objects is
+demonstrated.
+
+Features Demonstrated:
+
+    - Creation, Adam-like and Genesis features
+    - More sound effects
+    - Collision Events
+    - Clicking on 3D objects (via the ActorPicker super-class)
+    
+Additional Notes:
+
+    - Eve is currently the most advanced super-class, being a
+        significant code-base for the Simulator super-classes.

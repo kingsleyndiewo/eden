@@ -1,0 +1,1 @@
+Place all the XML configuration files for your game here.

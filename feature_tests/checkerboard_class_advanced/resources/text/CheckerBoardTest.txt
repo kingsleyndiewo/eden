@@ -1,0 +1,17 @@
+INTRODUCTION
+
+CheckerBoard Test is a simple 3D board that demonstrates the ease
+of using the Eden Gaming Engine in loading a board-type scene. An
+additional feature is the automatic arrangement of checkers
+pieces which gives you the foundation for a neat game. The advanced
+test demonstrates a 2-player game.
+
+Features Demonstrated:
+
+    - Loading a checkers board
+    - CheckerBoard features - 2 player game
+    - Using the dropFactor parameter - see config.xml
+    
+Additional Notes:
+
+    - The Board8x8 super-class inherits from Creation

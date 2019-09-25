@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright ©2009 Funtrench PLC. -->
+<!-- Player definitions for Eden Ludo -->
+<actor>
+    <!-- The values under each section should be in the format
+            <value valueName="Item">String value of item</value>
+            <fvalue valueName="Item">Float value of item</fvalue>
+            <ivalue valueName="Item">Integer value of item</ivalue>
+    -->
+    <section Name="Resources">
+        <!-- Ludo board loadables section -->
+        <subsection Name="Players">
+            <value valueName="model0">greenPlayer</value>
+            <value valueName="model1">yellowPlayer</value>
+            <value valueName="model2">redPlayer</value>
+            <value valueName="model3">bluePlayer</value>
+        </subsection>
+        <subsection Name="Scale">
+            <!-- Piece scaling -->
+            <fvalue valueName="pScaleX">0.25</fvalue>
+            <fvalue valueName="pScaleY">0.25</fvalue>
+            <fvalue valueName="pScaleZ">0.5</fvalue>
+        </subsection>
+    </section>
+</actor>
+

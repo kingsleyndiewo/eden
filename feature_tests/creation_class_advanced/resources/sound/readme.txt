@@ -1,0 +1,1 @@
+Place all your audio resources here. The effects and music subdirectories should uphold the distinction between lengthy music and brief effects.

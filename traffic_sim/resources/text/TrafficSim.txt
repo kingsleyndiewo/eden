@@ -1,0 +1,20 @@
+INTRODUCTION
+
+The Nairobi Project is a collaborative project between iHub Nairobi, Intellect
+Alliance, the Kenyan government and various other stakeholders aimed at solving
+the persistent traffic congestion problem on the Nairobi road network.
+
+In this simulation the 3 key algorithmic theorems of game theory are studied
+comparatively.
+
+Theorems Demonstrated:
+
+    - Congestion theorem
+    - Theorem 2
+    - Theorem 3
+    
+Additional Notes:
+
+    - The simulation is done using the Eden 3D development framework, a 3D
+    development framework created by Funtrench Limited, a member of the
+    Intellect Alliance.

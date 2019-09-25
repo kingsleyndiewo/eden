@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright ©2008 Funtrench PLC. -->
+<!-- Menu definition for EdenLudo main menu -->
+<menu>
+    <!-- The values under each section should be in the format
+            <value valueName="Item">String value of item</value>
+            <fvalue valueName="Item">Float value of item</fvalue>
+            <ivalue valueName="Item">Integer value of item</ivalue>
+        CSV values are comma-separated string values; such as:
+            <value valueName="Item">Me,You,Him,Her</value>
+    -->
+    <section Name="Resources">
+        <!-- Menu resources for main menu -->
+        <value valueName="titleFont">aachenBT.egg</value>
+        <value valueName="bodyFont">Calibri.egg</value>
+        <!-- Use None for no image -->
+        <value valueName="backImage">menu.png</value>
+    </section>    
+    <section Name="Definition">
+        <!-- Definitions for the main menu -->
+        <subsection Name="General">
+            <value valueName="name">Main</value>
+            <!-- List of labels to create; CSV. Use 'NULL' if empty -->
+            <value valueName="labels">Title</value>
+            <!-- List of buttons to create; CSV. Use 'NULL' if empty -->
+            <value valueName="buttons">Exit,New,About,Settings</value>
+            <!-- List of radio buttons to create; CSV. Use 'NULL' if empty -->
+            <value valueName="radioButtons">NULL</value>
+            <!-- List of optionMenus to create; CSV. Use 'NULL' if empty -->
+            <value valueName="optionMenus">Level</value>
+            <!-- List of sliders to create; CSV. Use 'NULL' if empty -->
+            <value valueName="sliders">NULL</value>
+        </subsection>
+        <subsection Name="Frame">
+            <!-- Frame position; Y is always 0 -->
+            <fvalue valueName="posX">0.0</fvalue>
+            <fvalue valueName="posY">0.0</fvalue>
+            <fvalue valueName="posZ">0.0</fvalue>
+            <!-- Frame size; Left, Right, Bottom, Top -->
+            <fvalue valueName="sizeL">-1.33</fvalue>
+            <fvalue valueName="sizeR">1.33</fvalue>
+            <fvalue valueName="sizeB">-1</fvalue>
+            <fvalue valueName="sizeT">1</fvalue>
+            <!-- Frame color; RGBA -->
+            <fvalue valueName="colR">0.0</fvalue>
+            <fvalue valueName="colG">0.0</fvalue>
+            <fvalue valueName="colB">0.0</fvalue>
+            <fvalue valueName="colA">1.0</fvalue>
+            <!-- Frame border dimensions; Width, Height -->
+            <fvalue valueName="borderW">0.05</fvalue>
+            <fvalue valueName="borderH">0.05</fvalue>
+        </subsection>
+        <subsection Name="FrameImage">
+            <!-- This section exists only if there is an image -->
+            <fvalue valueName="posX">0.0</fvalue>
+            <fvalue valueName="posY">0.0</fvalue>
+            <fvalue valueName="posZ">0.0</fvalue>
+            <!-- Image scale. -->
+            <fvalue valueName="scaleX">1.28</fvalue>
+            <fvalue valueName="scaleY">1.0</fvalue>
+            <fvalue valueName="scaleZ">0.95</fvalue>
+        </subsection>
+        <subsection Name="Labels">
+            <!-- Properties for the various menu labels listed above -->
+            <label Name="Title">
+                <!-- Label text and font (the font must be one loaded in the
+                    resources section) -->
+                <value valueName="text">Eden Ludo Alpha</value>
+                <value valueName="font">titleFont</value>
+                <!-- Label position -->
+                <fvalue valueName="posX">0.0</fvalue>
+                <fvalue valueName="posY">0.0</fvalue>
+                <fvalue valueName="posZ">0.5</fvalue>
+                <!-- Frame color. Set alpha to zero for no frame -->
+                <fvalue valueName="fcolR">0.0</fvalue>
+                <fvalue valueName="fcolG">0.0</fvalue>
+                <fvalue valueName="fcolB">1.0</fvalue>
+                <fvalue valueName="fcolA">0.0</fvalue>
+                <!-- Text color -->
+                <fvalue valueName="colR">0.0</fvalue>
+                <fvalue valueName="colG">1.0</fvalue>
+                <fvalue valueName="colB">0.0</fvalue>
+                <fvalue valueName="colA">1.0</fvalue>
+                <!-- Text shadow color -->
+                <fvalue valueName="scolR">1.0</fvalue>
+                <fvalue valueName="scolG">0.0</fvalue>
+                <fvalue valueName="scolB">0.0</fvalue>
+                <fvalue valueName="scolA">0.5</fvalue>
+                <!-- Text scale -->
+                <fvalue valueName="scale">0.1</fvalue>
+                <!-- Text alignment:
+                    0 - TextNode.ALeft
+                    1 - TextNode.ACenter
+                    2 - TextNode.ARight
+                -->
+                <ivalue valueName="alignment">1</ivalue>
+                <!-- Text editability -->
+                <ivalue valueName="mayChange">0</ivalue>
+            </label>
+        </subsection>
+        <subsection Name="Buttons">
+            <!-- Properties for the various buttons listed above -->
+            <button Name="Exit">
+                <!-- Button text and font (the font must be one loaded in the
+                    resources section) -->
+                <value valueName="text">Exit Ludo Alpha</value>
+                <value valueName="font">bodyFont</value>
+                <!-- Button position -->
+                <fvalue valueName="posX">0.6</fvalue>
+                <fvalue valueName="posY">0.0</fvalue>
+                <fvalue valueName="posZ">-0.5</fvalue>
+                <!-- Frame color. Set alpha to zero for no frame -->
+                <fvalue valueName="fcolR">1.0</fvalue>
+                <fvalue valueName="fcolG">1.0</fvalue>
+                <fvalue valueName="fcolB">0.4</fvalue>
+                <fvalue valueName="fcolA">1.0</fvalue>
+                <!-- Text color -->
+                <fvalue valueName="colR">0.0</fvalue>
+                <fvalue valueName="colG">0.0</fvalue>
+                <fvalue valueName="colB">0.0</fvalue>
+                <fvalue valueName="colA">1.0</fvalue>
+                <!-- Text shadow color -->
+                <fvalue valueName="scolR">0.0</fvalue>
+                <fvalue valueName="scolG">0.0</fvalue>
+                <fvalue valueName="scolB">1.0</fvalue>
+                <fvalue valueName="scolA">0.5</fvalue>
+                <!-- Text scale -->
+                <fvalue valueName="scale">0.1</fvalue>
+                <!-- Text alignment:
+                    0 - TextNode.ALeft
+                    1 - TextNode.ACenter
+                    2 - TextNode.ARight
+                -->
+                <ivalue valueName="alignment">1</ivalue>
+                <!-- Button callback function index -->
+                <ivalue valueName="callbackIndex">0</ivalue>
+            </button>
+            <button Name="New">
+                <!-- Button text and font (the font must be one loaded in the
+                    resources section) -->
+                <value valueName="text">New Game</value>
+                <value valueName="font">bodyFont</value>
+                <!-- Button position -->
+                <fvalue valueName="posX">-0.6</fvalue>
+                <fvalue valueName="posY">0.0</fvalue>
+                <fvalue valueName="posZ">-0.1</fvalue>
+                <!-- Frame color. Set alpha to zero for no frame -->
+                <fvalue valueName="fcolR">1.0</fvalue>
+                <fvalue valueName="fcolG">1.0</fvalue>
+                <fvalue valueName="fcolB">0.4</fvalue>
+                <fvalue valueName="fcolA">1.0</fvalue>
+                <!-- Text color -->
+                <fvalue valueName="colR">0.0</fvalue>
+                <fvalue valueName="colG">0.0</fvalue>
+                <fvalue valueName="colB">0.0</fvalue>
+                <fvalue valueName="colA">1.0</fvalue>
+                <!-- Text shadow color -->
+                <fvalue valueName="scolR">0.0</fvalue>
+                <fvalue valueName="scolG">0.0</fvalue>
+                <fvalue valueName="scolB">1.0</fvalue>
+                <fvalue valueName="scolA">0.5</fvalue>
+                <!-- Text scale -->
+                <fvalue valueName="scale">0.1</fvalue>
+                <!-- Text alignment:
+                    0 - TextNode.ALeft
+                    1 - TextNode.ACenter
+                    2 - TextNode.ARight
+                -->
+                <ivalue valueName="alignment">1</ivalue>
+                <!-- Button callback function index -->
+                <ivalue valueName="callbackIndex">1</ivalue>
+            </button>
+            <button Name="About">
+                <!-- Button text and font (the font must be one loaded in the
+                    resources section) -->
+                <value valueName="text">About Eden Ludo</value>
+                <value valueName="font">bodyFont</value>
+                <!-- Button position -->
+                <fvalue valueName="posX">0.6</fvalue>
+                <fvalue valueName="posY">0.0</fvalue>
+                <fvalue valueName="posZ">-0.1</fvalue>
+                <!-- Frame color. Set alpha to zero for no frame -->
+                <fvalue valueName="fcolR">1.0</fvalue>
+                <fvalue valueName="fcolG">1.0</fvalue>
+                <fvalue valueName="fcolB">0.4</fvalue>
+                <fvalue valueName="fcolA">1.0</fvalue>
+                <!-- Text color -->
+                <fvalue valueName="colR">0.0</fvalue>
+                <fvalue valueName="colG">0.0</fvalue>
+                <fvalue valueName="colB">0.0</fvalue>
+                <fvalue valueName="colA">1.0</fvalue>
+                <!-- Text shadow color -->
+                <fvalue valueName="scolR">0.0</fvalue>
+                <fvalue valueName="scolG">0.0</fvalue>
+                <fvalue valueName="scolB">1.0</fvalue>
+                <fvalue valueName="scolA">0.5</fvalue>
+                <!-- Text scale -->
+                <fvalue valueName="scale">0.1</fvalue>
+                <!-- Text alignment:
+                    0 - TextNode.ALeft
+                    1 - TextNode.ACenter
+                    2 - TextNode.ARight
+                -->
+                <ivalue valueName="alignment">1</ivalue>
+                <!-- Button callback function index -->
+                <ivalue valueName="callbackIndex">2</ivalue>
+            </button>
+            <button Name="Settings">
+                <!-- Button text and font (the font must be one loaded in the
+                    resources section) -->
+                <value valueName="text">Preferences</value>
+                <value valueName="font">bodyFont</value>
+                <!-- Button position -->
+                <fvalue valueName="posX">-0.6</fvalue>
+                <fvalue valueName="posY">0.0</fvalue>
+                <fvalue valueName="posZ">-0.5</fvalue>
+                <!-- Frame color. Set alpha to zero for no frame -->
+                <fvalue valueName="fcolR">1.0</fvalue>
+                <fvalue valueName="fcolG">1.0</fvalue>
+                <fvalue valueName="fcolB">0.4</fvalue>
+                <fvalue valueName="fcolA">1.0</fvalue>
+                <!-- Text color -->
+                <fvalue valueName="colR">0.0</fvalue>
+                <fvalue valueName="colG">0.0</fvalue>
+                <fvalue valueName="colB">0.0</fvalue>
+                <fvalue valueName="colA">1.0</fvalue>
+                <!-- Text shadow color -->
+                <fvalue valueName="scolR">0.0</fvalue>
+                <fvalue valueName="scolG">0.0</fvalue>
+                <fvalue valueName="scolB">1.0</fvalue>
+                <fvalue valueName="scolA">0.5</fvalue>
+                <!-- Text scale -->
+                <fvalue valueName="scale">0.1</fvalue>
+                <!-- Text alignment:
+                    0 - TextNode.ALeft
+                    1 - TextNode.ACenter
+                    2 - TextNode.ARight
+                -->
+                <ivalue valueName="alignment">1</ivalue>
+                <!-- Button callback function index -->
+                <ivalue valueName="callbackIndex">3</ivalue>
+            </button>
+        </subsection>
+        <subsection Name="RadioButtons">
+            <!-- Properties for the various radio buttons listed above -->
+            <radioButton Name="Test">
+                <!-- Radio button text and font (the font must be one loaded
+                    in the resources section) -->
+                <value valueName="text">Test Radio</value>
+                <value valueName="font">bodyFont</value>
+                <!-- Radio button position -->
+                <fvalue valueName="posX">-0.10</fvalue>
+                <fvalue valueName="posY">0.0</fvalue>
+                <fvalue valueName="posZ">-0.65</fvalue>
+                <!-- Frame color. Set alpha to zero for no frame -->
+                <fvalue valueName="fcolR">1.0</fvalue>
+                <fvalue valueName="fcolG">1.0</fvalue>
+                <fvalue valueName="fcolB">0.4</fvalue>
+                <fvalue valueName="fcolA">1.0</fvalue>
+                <!-- Text color -->
+                <fvalue valueName="colR">0.0</fvalue>
+                <fvalue valueName="colG">0.0</fvalue>
+                <fvalue valueName="colB">0.0</fvalue>
+                <fvalue valueName="colA">1.0</fvalue>
+                <!-- Text shadow color -->
+                <fvalue valueName="scolR">0.0</fvalue>
+                <fvalue valueName="scolG">0.0</fvalue>
+                <fvalue valueName="scolB">1.0</fvalue>
+                <fvalue valueName="scolA">0.5</fvalue>
+                <!-- Text scale -->
+                <fvalue valueName="scale">0.1</fvalue>
+                <!-- Text alignment:
+                    0 - TextNode.ALeft
+                    1 - TextNode.ACenter
+                    2 - TextNode.ARight
+                -->
+                <ivalue valueName="alignment">1</ivalue>
+                <!-- Radio button callback function index -->
+                <ivalue valueName="callbackIndex">5</ivalue>
+                <!-- Radio button press effect -->
+                <ivalue valueName="pressEffect">1</ivalue>
+                <!-- Radio button initial value -->
+                <ivalue valueName="initialValue">0</ivalue>
+                <!-- Radio button box placement wrt the text (left or right) -->
+                <value valueName="boxPlacement">left</value>
+                <!-- Radio button box border value -->
+                <ivalue valueName="boxBorder">0</ivalue>
+                <!-- Radio button box relief value (0 is SUNKEN) -->
+                <ivalue valueName="boxRelief">0</ivalue>
+            </radioButton>
+        </subsection>
+        <subsection Name="OptionMenus">
+            <!-- Properties for the various option menus listed above -->
+            <optionMenu Name="Level">
+                <!-- Menu text and font (the font must be one loaded in the
+                    resources section) -->
+                <value valueName="text">Select no. of players</value>
+                <value valueName="font">bodyFont</value>
+                <!-- Menu position -->
+                <fvalue valueName="posX">-0.4</fvalue>
+                <fvalue valueName="posY">0.0</fvalue>
+                <fvalue valueName="posZ">-0.3</fvalue>
+                <!-- Highlight color -->
+                <fvalue valueName="hcolR">0.65</fvalue>
+                <fvalue valueName="hcolG">0.65</fvalue>
+                <fvalue valueName="hcolB">0.65</fvalue>
+                <fvalue valueName="hcolA">1.0</fvalue>
+                <!-- Frame color. Set alpha to zero for no frame -->
+                <fvalue valueName="fcolR">0.60</fvalue>
+                <fvalue valueName="fcolG">0.85</fvalue>
+                <fvalue valueName="fcolB">0.55</fvalue>
+                <fvalue valueName="fcolA">1.0</fvalue>
+                <!-- Text color -->
+                <fvalue valueName="colR">0.0</fvalue>
+                <fvalue valueName="colG">0.0</fvalue>
+                <fvalue valueName="colB">0.0</fvalue>
+                <fvalue valueName="colA">1.0</fvalue>
+                <!-- Text shadow color -->
+                <fvalue valueName="scolR">0.0</fvalue>
+                <fvalue valueName="scolG">0.0</fvalue>
+                <fvalue valueName="scolB">1.0</fvalue>
+                <fvalue valueName="scolA">0.5</fvalue>
+                <!-- Text scale -->
+                <fvalue valueName="scale">0.1</fvalue>
+                <!-- Text alignment:
+                    0 - TextNode.ALeft
+                    1 - TextNode.ACenter
+                    2 - TextNode.ARight
+                -->
+                <ivalue valueName="alignment">0</ivalue>
+                <!-- Item List; use CSV of keys which must exist -->
+                <value valueName="itemList">lvl1,lvl2,lvl3,lvl4</value>
+                <value valueName="lvl1">Human Players - 1</value>
+                <value valueName="lvl2">Human Players - 2</value>
+                <value valueName="lvl3">Human Players - 3</value>
+                <value valueName="lvl4">Human Players - 4</value>
+                <!-- Initial selection -->
+                <ivalue valueName="initialItem">0</ivalue>
+                <!-- optionMenu callback function index -->
+                <ivalue valueName="callbackIndex">4</ivalue>
+            </optionMenu>
+        </subsection>
+        <subsection Name="Sliders">
+            <!-- Properties for the various sliders listed above -->
+            <slider Name="Test">
+                <!-- Slider text and font (the font must be one loaded
+                    in the resources section) -->
+                <value valueName="text">Test Radio</value>
+                <value valueName="font">bodyFont</value>
+                <!-- Slider position -->
+                <fvalue valueName="posX">-0.2</fvalue>
+                <fvalue valueName="posY">0.0</fvalue>
+                <fvalue valueName="posZ">0.25</fvalue>
+                <!-- Frame color. Set alpha to zero for no frame -->
+                <fvalue valueName="fcolR">1.0</fvalue>
+                <fvalue valueName="fcolG">1.0</fvalue>
+                <fvalue valueName="fcolB">0.4</fvalue>
+                <fvalue valueName="fcolA">1.0</fvalue>
+                <!-- Thumb color -->
+                <fvalue valueName="tcolR">0.0</fvalue>
+                <fvalue valueName="tcolG">0.0</fvalue>
+                <fvalue valueName="tcolB">1.0</fvalue>
+                <fvalue valueName="tcolA">1.0</fvalue>
+                <!-- Text color -->
+                <fvalue valueName="colR">0.0</fvalue>
+                <fvalue valueName="colG">0.0</fvalue>
+                <fvalue valueName="colB">0.0</fvalue>
+                <fvalue valueName="colA">1.0</fvalue>
+                <!-- Text shadow color -->
+                <fvalue valueName="scolR">0.0</fvalue>
+                <fvalue valueName="scolG">0.0</fvalue>
+                <fvalue valueName="scolB">1.0</fvalue>
+                <fvalue valueName="scolA">0.5</fvalue>
+                <!-- Text scale -->
+                <fvalue valueName="scale">0.1</fvalue>
+                <!-- Text alignment:
+                    0 - TextNode.ALeft
+                    1 - TextNode.ACenter
+                    2 - TextNode.ARight
+                -->
+                <ivalue valueName="alignment">1</ivalue>
+                <!-- Slider callback function index -->
+                <ivalue valueName="callbackIndex">5</ivalue>
+                <!-- Slider initial value -->
+                <ivalue valueName="initialValue">0</ivalue>
+                <!-- Slider range (max and min) -->
+                <ivalue valueName="rangeMinimum">0</ivalue>
+                <ivalue valueName="rangeMaximum">10</ivalue>
+                <!-- Slider step value -->
+                <ivalue valueName="stepValue">0</ivalue>
+                <!-- Slider orientation (0 is HORIZONTAL) -->
+                <ivalue valueName="orientation">0</ivalue>
+                <!-- Thumb border dimensions -->
+                <fvalue valueName="borderWidth">0.01</fvalue>
+                <fvalue valueName="borderHeight">0.01</fvalue>
+            </slider>
+        </subsection>
+    </section>
+</menu>

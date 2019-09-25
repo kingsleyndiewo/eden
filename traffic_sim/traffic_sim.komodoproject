@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Komodo Project File - DO NOT EDIT -->
+<project id="b91b12f0-c1dd-497c-b15f-07becb2e013b" kpf_version="5" name="traffic_sim.komodoproject">
+<preference-set idref="b91b12f0-c1dd-497c-b15f-07becb2e013b">
+  <boolean id="import_live">1</boolean>
+</preference-set>
+</project>

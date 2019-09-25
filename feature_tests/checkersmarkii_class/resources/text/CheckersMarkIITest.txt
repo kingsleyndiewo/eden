@@ -1,0 +1,10 @@
+INTRODUCTION
+
+CheckersMarkII Test is aan advanced 3D board that demonstrates the
+ease of using the Eden Gaming Engine in loading a board-type scene
+and playing a game versus the AI.
+
+Features Demonstrated:
+
+    - Loading a checkers board
+    - CheckersMarkII features - versus-AI game using safeRandom

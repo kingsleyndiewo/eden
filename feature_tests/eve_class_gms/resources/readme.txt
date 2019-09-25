@@ -1,0 +1,1 @@
+Place all your loadable resources here in the appropriate subdirectories.

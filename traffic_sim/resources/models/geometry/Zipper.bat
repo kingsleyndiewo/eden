@@ -1,0 +1,2 @@
+pzip world.egg
+Pause

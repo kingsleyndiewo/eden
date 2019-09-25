@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright ©2009 Funtrench Limited. -->
+<!-- Force configuration XML for AdamTestPhysics -->
+<physicsForces>
+    <!-- The values under each section should be in the format
+            <value valueName="Item">String value of item</value>
+            <fvalue valueName="Item">Float value of item</fvalue>
+            <ivalue valueName="Item">Integer value of item</ivalue>
+    -->
+    <section Name="forceList">
+        <!-- The list of forces; CSV -->
+        <value valueName="forces">Wind,Jet</value>
+    </section>
+    <section Name="Forces">
+        <!-- Force definitions section --> 
+        <force Name="Wind">
+            <!-- The force identifier -->
+            <value valueName="name">wind</value>
+            <!-- The application -->
+            <ivalue valueName="isGlobal">1</ivalue>
+            <!-- Force XYZ magnitude -->
+            <fvalue valueName="forceX">2.0</fvalue>
+            <fvalue valueName="forceY">2.0</fvalue>
+            <fvalue valueName="forceZ">0.0</fvalue>
+            <!-- Force type [extra args]:
+                1 - LinearVectorForce [massDependence]
+                2 - AngularVectorForce []
+                3 - LinearJitterForce [massDependence]
+                4 - LinearNoiseForce [massDependence]
+                5 - LinearSinkForce [massDependence, forceCenter, forceRadius,
+                    fallOffType (0 = FTONEOVERR, 1 = FTONEOVERRSQUARED,
+                    2 = FTONEOVERRCUBED)]
+                6 - LinearSourceForce [massDependence, forceCenter, forceRadius,
+                    fallOffType (0 = FTONEOVERR, 1 = FTONEOVERRSQUARED,
+                    2 = FTONEOVERRCUBED)]
+                7 - LinearFrictionForce [massDependence, frictionCoefficient]
+                8 - LinearControlForce [massDependence]
+                9 - LinearUserDefinedForce [massDependence,
+                    UDFF (Index of a passed function list)]
+                10 - LinearCylinderVortexForce [massDependence, cylinderLength,
+                    cylinderRadius, coefficient]
+            -->
+            <ivalue valueName="forceType">1</ivalue>
+            <!-- Extra parameters for specific forces -->
+            <ivalue valueName="massDependence">1</ivalue>
+        </force>
+        <force Name="Jet">
+            <!-- The force identifier -->
+            <value valueName="name">jet</value>
+            <!-- The application -->
+            <ivalue valueName="isGlobal">0</ivalue>
+            <!-- Force XYZ magnitude -->
+            <fvalue valueName="forceX">0.0</fvalue>
+            <fvalue valueName="forceY">0.0</fvalue>
+            <fvalue valueName="forceZ">3.0</fvalue>
+            <ivalue valueName="forceType">1</ivalue>
+            <!-- Extra parameters for specific forces -->
+            <ivalue valueName="massDependence">1</ivalue>
+        </force>
+    </section>
+</physicsForces>

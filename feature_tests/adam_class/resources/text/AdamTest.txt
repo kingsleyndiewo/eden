@@ -1,0 +1,26 @@
+INTRODUCTION
+
+Adam Test is a moderately advanced 3D scene that demonstrates
+the ease of using the Eden Gaming Engine's more practical features
+in actual development of games. With the Adam class, all the features
+of the Creation and Genesis Classes are available, with the addition
+of a default main actor whose details are provided for in an XML file
+as usual, and this file is identified in config.xml.
+
+Two actors are loaded, a geometry model and capturing actor collisions
+is demonstrated. An advanced creation feature - getting the state of
+the modifier keys (ALT, SHIFT AND CONTROL) is demonstrated.
+
+Features Demonstrated:
+
+    - Creation and Genesis features
+    - Video employment
+    - Sound effects
+    - In-game text rendering
+    - Collision Events
+    
+Additional Notes:
+
+    - This feature test begins to demonstrate actual game-making
+        capabilities and should interest potential and actual
+        developers.

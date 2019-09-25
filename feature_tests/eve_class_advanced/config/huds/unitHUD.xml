@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright ©2009 Funtrench Limited. -->
+<!-- HUD definition for EveTest Unit HUD -->
+<glass>
+    <!-- The values under each section should be in the format
+            <value valueName="Item">String value of item</value>
+            <fvalue valueName="Item">Float value of item</fvalue>
+            <ivalue valueName="Item">Integer value of item</ivalue>
+        CSV values are comma-separated string values; such as:
+            <value valueName="Item">Me,You,Him,Her</value>
+    -->
+    <section Name="Resources">
+        <!-- HUD resources for status HUD -->
+        <value valueName="titleFont">aachenBT.egg</value>
+        <value valueName="bodyFont">Calibri.egg</value>
+        <!-- Use None for no image -->
+        <value valueName="backImage">None</value>
+    </section>    
+    <section Name="Definition">
+        <!-- Definitions for the status HUD -->
+        <subsection Name="General">
+            <value valueName="name">Unit</value>
+            <!-- List of labels to create; CSV -->
+            <value valueName="labels">Name,Health,Sex</value>
+            <!-- List of buttons to create; CSV -->
+            <value valueName="buttons">NULL</value>
+            <!-- List of radio buttons to create; CSV -->
+            <value valueName="radioButtons">NULL</value>
+            <!-- List of optionMenus to create; CSV -->
+            <value valueName="optionMenus">NULL</value>
+            <!-- List of sliders to create; CSV -->
+            <value valueName="sliders">NULL</value>
+        </subsection>
+        <subsection Name="Frame">
+            <!-- Frame position; Y is always 0 -->
+            <fvalue valueName="posX">0.0</fvalue>
+            <fvalue valueName="posY">0.0</fvalue>
+            <fvalue valueName="posZ">0.0</fvalue>
+            <!-- Frame size; Left, Right, Bottom, Top -->
+            <fvalue valueName="sizeL">-0.2</fvalue>
+            <fvalue valueName="sizeR">0.2</fvalue>
+            <fvalue valueName="sizeB">0.35</fvalue>
+            <fvalue valueName="sizeT">0.6</fvalue>
+            <!-- Frame color; RGBA -->
+            <fvalue valueName="colR">1.0</fvalue>
+            <fvalue valueName="colG">1.0</fvalue>
+            <fvalue valueName="colB">1.0</fvalue>
+            <fvalue valueName="colA">0.3</fvalue>
+            <!-- Frame border dimensions; Width, Height -->
+            <fvalue valueName="borderW">0.03</fvalue>
+            <fvalue valueName="borderH">0.03</fvalue>
+        </subsection>
+        <subsection Name="FrameImage">
+            <!-- This section exists only if there is an image -->
+            <fvalue valueName="posX">0.0</fvalue>
+            <fvalue valueName="posY">0.0</fvalue>
+            <fvalue valueName="posZ">0.0</fvalue>
+            <!-- Image scale. -->
+            <fvalue valueName="scaleX">1.28</fvalue>
+            <fvalue valueName="scaleY">1.0</fvalue>
+            <fvalue valueName="scaleZ">0.95</fvalue>
+        </subsection>
+        <subsection Name="Labels">
+            <!-- Properties for the various HUD labels listed above -->
+            <label Name="Name">
+                <!-- Label text and font (the font must be one loaded in the
+                    resources section) -->
+                <value valueName="text">Miranda</value>
+                <value valueName="font">bodyFont</value>
+                <!-- Label position -->
+                <fvalue valueName="posX">0.0</fvalue>
+                <fvalue valueName="posY">0.0</fvalue>
+                <fvalue valueName="posZ">0.52</fvalue>
+                <!-- Frame color. Set alpha to zero for no frame -->
+                <fvalue valueName="fcolR">0.0</fvalue>
+                <fvalue valueName="fcolG">0.0</fvalue>
+                <fvalue valueName="fcolB">1.0</fvalue>
+                <fvalue valueName="fcolA">0.0</fvalue>
+                <!-- Text color -->
+                <fvalue valueName="colR">0.0</fvalue>
+                <fvalue valueName="colG">0.0</fvalue>
+                <fvalue valueName="colB">0.0</fvalue>
+                <fvalue valueName="colA">1.0</fvalue>
+                <!-- Text shadow color -->
+                <fvalue valueName="scolR">1.0</fvalue>
+                <fvalue valueName="scolG">0.0</fvalue>
+                <fvalue valueName="scolB">0.0</fvalue>
+                <fvalue valueName="scolA">0.5</fvalue>
+                <!-- Text scale -->
+                <fvalue valueName="scale">0.05</fvalue>
+                <!-- Text alignment:
+                    0 - TextNode.ALeft
+                    1 - TextNode.ACenter
+                    2 - TextNode.ARight
+                -->
+                <ivalue valueName="alignment">1</ivalue>
+                <!-- Text editability -->
+                <ivalue valueName="mayChange">1</ivalue>
+            </label>
+            <label Name="Health">
+                <!-- Label text and font (the font must be one loaded in the
+                    resources section) -->
+                <value valueName="text">Health - 100%</value>
+                <value valueName="font">bodyFont</value>
+                <!-- Label position -->
+                <fvalue valueName="posX">0.0</fvalue>
+                <fvalue valueName="posY">0.0</fvalue>
+                <fvalue valueName="posZ">0.45</fvalue>
+                <!-- Frame color. Set alpha to zero for no frame -->
+                <fvalue valueName="fcolR">0.0</fvalue>
+                <fvalue valueName="fcolG">0.0</fvalue>
+                <fvalue valueName="fcolB">1.0</fvalue>
+                <fvalue valueName="fcolA">0.0</fvalue>
+                <!-- Text color -->
+                <fvalue valueName="colR">0.0</fvalue>
+                <fvalue valueName="colG">1.0</fvalue>
+                <fvalue valueName="colB">0.0</fvalue>
+                <fvalue valueName="colA">1.0</fvalue>
+                <!-- Text shadow color -->
+                <fvalue valueName="scolR">1.0</fvalue>
+                <fvalue valueName="scolG">0.0</fvalue>
+                <fvalue valueName="scolB">0.0</fvalue>
+                <fvalue valueName="scolA">0.5</fvalue>
+                <!-- Text scale -->
+                <fvalue valueName="scale">0.05</fvalue>
+                <!-- Text alignment:
+                    0 - TextNode.ALeft
+                    1 - TextNode.ACenter
+                    2 - TextNode.ARight
+                -->
+                <ivalue valueName="alignment">1</ivalue>
+                <!-- Text editability -->
+                <ivalue valueName="mayChange">1</ivalue>
+            </label>
+            <label Name="Sex">
+                <!-- Label text and font (the font must be one loaded in the
+                    resources section) -->
+                <value valueName="text">Female</value>
+                <value valueName="font">bodyFont</value>
+                <!-- Label position -->
+                <fvalue valueName="posX">0.0</fvalue>
+                <fvalue valueName="posY">0.0</fvalue>
+                <fvalue valueName="posZ">0.38</fvalue>
+                <!-- Frame color. Set alpha to zero for no frame -->
+                <fvalue valueName="fcolR">0.0</fvalue>
+                <fvalue valueName="fcolG">0.0</fvalue>
+                <fvalue valueName="fcolB">1.0</fvalue>
+                <fvalue valueName="fcolA">0.0</fvalue>
+                <!-- Text color -->
+                <fvalue valueName="colR">1.0</fvalue>
+                <fvalue valueName="colG">0.0</fvalue>
+                <fvalue valueName="colB">0.0</fvalue>
+                <fvalue valueName="colA">1.0</fvalue>
+                <!-- Text shadow color -->
+                <fvalue valueName="scolR">1.0</fvalue>
+                <fvalue valueName="scolG">0.0</fvalue>
+                <fvalue valueName="scolB">0.0</fvalue>
+                <fvalue valueName="scolA">0.5</fvalue>
+                <!-- Text scale -->
+                <fvalue valueName="scale">0.05</fvalue>
+                <!-- Text alignment:
+                    0 - TextNode.ALeft
+                    1 - TextNode.ACenter
+                    2 - TextNode.ARight
+                -->
+                <ivalue valueName="alignment">1</ivalue>
+                <!-- Text editability -->
+                <ivalue valueName="mayChange">1</ivalue>
+            </label>
+        </subsection>
+    </section>
+</glass>

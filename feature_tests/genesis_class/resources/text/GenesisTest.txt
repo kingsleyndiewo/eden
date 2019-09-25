@@ -1,0 +1,21 @@
+INTRODUCTION
+
+Genesis Test is a simple 3D scene that demonstrates the ease of
+using the Eden Gaming Engine in loading a world. A model is also
+loaded to demonstrate the loading of geometry. A single actor is
+loaded to explore how the Genesis class extends Creation.
+ 
+Features Demonstrated:
+
+    - Creation features
+    - Loading an actor
+    - Panda Lerp Intervals
+    
+Additional notes:
+
+    - As in the Creation Test feature test, use the three mouse
+        buttons to control the model's view. Middle mouse button
+        controls heading (H), pitch (P) and roll (R) axes.
+    - This is the final feature test that employs mouse-based
+        camera control.
+    - Use C to clear all text from the screen.

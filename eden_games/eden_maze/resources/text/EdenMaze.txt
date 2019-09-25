@@ -1,0 +1,21 @@
+INTRODUCTION
+
+EdenMaze is a puzzle game that is fun and easy to play. Just move
+Miranda out of the maze and you're done. But beware, for several
+dangers lurk in the depths of the maze - dangers that will make
+it impossible for Miranda to ever come out of the maze....
+
+You have a limited number of flags you can place to help you find your
+way. Use them wisely...
+
+Use the direction keys to control Miranda and press D at any time to
+show this help document. Press I for game details and ESC to quit the
+game.
+
+HINTS
+
+-   You can usually see a dead end before you get into it, so avoid losing
+    those 500 credits so easily.
+-   You lose 2 credits every second so hurry up!
+-   Bumping into walls costs you a credit each time; walk carefully.
+-   Use flags sparingly.

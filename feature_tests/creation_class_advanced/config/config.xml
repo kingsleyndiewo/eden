@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright ©2009 Funtrench Limited. -->
+<!-- Essential configuration for the Creation Class -->
+<configuration>
+    <!-- The values under each section should be in the format
+            <value valueName="Item">String value of item</value>
+            <bvalue valueName="Item">Boolean Integer value of item</bvalue>
+            <fvalue valueName="Item">Float value of item</fvalue>
+            <ivalue valueName="Item">Integer value of item</ivalue>
+    -->
+    <section Name="About">
+        <!-- Game ID section -->
+        <!-- You can put as many values as you like but they appear as
+             you specify in displayOrder which should be a comma-separated
+             sequence. The colons will be put for you in the format
+             [Item: Value of Item]. At the very least put the game title
+             and author here -->
+        <value valueName="Title">Creation Sample Client</value>
+        <value valueName="Author">Project Eden Development Team</value>
+        <value valueName="Company">Funtrench Limited</value>
+        <value valueName="Legal Copyright">(C)2009 Funtrench Limited</value>
+        <value valueName="Genre">Eden3D World Client</value>
+        <value valueName="Music">Enter the Cave - Off Site</value>
+        <value valueName="displayOrder">Title,Author,Company,Legal Copyright,Genre,Music</value>
+    </section>
+    <section Name="Startup">
+        <!-- Startup settings section -->
+        <!-- The only essential subsection is WorldDetails. The rest do not
+             have to exist.
+             To omit Visuals, set visualsCount = 0
+             To omit Sound, set playSound = 0
+        -->
+        <subsection Name="WorldDetails">
+            <!-- The world type - file-based geometry or heightfield-based
+                terrain. -->
+            <ivalue valueName="worldType">1</ivalue>
+            <!-- Details about the main world geometry. -->
+            <value valueName="terrainData">plane.xml</value>
+            <fvalue valueName="scaleX">0.4</fvalue>
+            <fvalue valueName="scaleY">0.4</fvalue>
+            <fvalue valueName="scaleZ">0.4</fvalue>
+            <!-- initial position -->
+            <fvalue valueName="posX">-60.0</fvalue>
+            <fvalue valueName="posY">-20.0</fvalue>
+            <fvalue valueName="posZ">-3.0</fvalue>
+            <!-- Whether to enable physics -->
+            <ivalue valueName="enablePhysics">0</ivalue>
+            <!-- The collision bitmask -->
+            <ivalue valueName="collisionBM">1</ivalue>
+            <!-- Mouse cursor visibility. This affects visibility in the
+                 game and can be changed in the scripts. -->
+            <ivalue valueName="showMouse">1</ivalue>
+            <ivalue valueName="defaultFPS">90</ivalue>
+            <!-- Visuals and Sounds Settings -->
+            <ivalue valueName="visualsCount">3</ivalue>
+            <ivalue valueName="playSound">1</ivalue>
+            <!-- Use 1 to keep camera defaults. If this value is not 1 then
+                 the Camera subsection MUST exist-->
+            <ivalue valueName="cameraDefaults">0</ivalue>
+        </subsection>
+        <subsection Name="Camera">
+            <!-- Settings for the camera -->
+            <!-- Camera behavior; either FIXED or MOUSED. If MOUSED then there's
+                 no need for XYZ/HPR information -->
+            <value valueName="cameraTrait">MOUSED</value>
+            <!-- Initial position of camera in world -->
+            <fvalue valueName="cameraX">0.0</fvalue>
+            <fvalue valueName="cameraY">10.0</fvalue>
+            <fvalue valueName="cameraZ">30.0</fvalue>
+            <!-- Camera orientation -->
+            <fvalue valueName="cameraH">0.0</fvalue>
+            <!-- Pitch of -90 is straight down, 90 is straight up. 0 is level. -->
+            <fvalue valueName="cameraP">-75.0</fvalue>
+            <fvalue valueName="cameraR">0.0</fvalue>
+        </subsection>
+        <subsection Name="Visuals">
+            <!-- Opening images and/or videos. -->
+            <!-- If the screens are > 0 then the first thing must be the
+                 names of the visuals in order of appearance 1 to n. -->
+            <!-- You must specify valueName="screen_n" for ALL image resources -->     
+            <!-- You must specify valueName="video_n" for ALL video resources -->
+            <!-- You must specify a screen position for all visuals after the
+                 filename - ':'-separated -->
+            <value valueName="screen_1">screen1.png:0:0:0</value>
+            <value valueName="screen_2">screen2.png:0:0:0</value>
+            <value valueName="screen_3">screen3.png:0:0:0</value>
+            <!-- Use valueName="interval" exclusively -->
+            <fvalue valueName="interval">3.0</fvalue>
+        </subsection>
+        <subsection Name="Sound">
+            <!-- Opening music if any. playSound specifies whether there
+                 is a startup sound (0 for NO). Here just the name of the file
+                 and whether we play along with visuals or after them.
+                 0 - sound plays from game startup
+                 1 - sound plays after the opening visuals
+            -->
+            <!-- You must specify a sound volume for the sound after the
+                 filename - ':'-separated -->
+            <value valueName="music">sound1.mp3:0.5</value>
+            <ivalue valueName="follows">0</ivalue>
+        </subsection>    
+    </section>
+</configuration>

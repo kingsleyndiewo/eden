@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright ©2009 Funtrench PLC. -->
+<!-- Actor configuration for Good Wizard -->
+<actor>
+    <!-- The values under each section should be in the format
+            <value valueName="Item">String value of item</value>
+            <fvalue valueName="Item">Float value of item</fvalue>
+            <ivalue valueName="Item">Integer value of item</ivalue>
+    -->
+    <section Name="Resources">
+        <!-- Actor loadables section -->
+        <subsection Name="Main">
+            <!-- Everything except the animations -->
+            <value valueName="model">GWizard.egg.pz</value>
+            <value valueName="name">GWizard</value>
+            <!-- Actor scaling -->
+            <fvalue valueName="scaleX">0.0075</fvalue>
+            <fvalue valueName="scaleY">0.0075</fvalue>
+            <fvalue valueName="scaleZ">0.0075</fvalue>
+            <fvalue valueName="sphereFactor">0.85</fvalue>
+        </subsection>
+        <subsection Name="Animations">
+            <!-- The animations only -->
+            <value valueName="walk">gw02.egg</value>
+        </subsection>
+    </section>
+    <section Name="Setup">
+        <!-- Actor setup section -->
+        <value valueName="defaultAnimation">walk</value>
+        <ivalue valueName="defaultPose">2</ivalue>
+        <!-- Initial position of actor in world -->
+        <fvalue valueName="positionX">5.0</fvalue>
+        <fvalue valueName="positionY">0.0</fvalue>
+        <fvalue valueName="positionZ">3.0</fvalue>
+        <!-- Camera distance from the actor; for actors who
+             will be tracked by camera -->
+        <ivalue valueName="isTracked">0</ivalue>
+        <ivalue valueName="cameraX">8</ivalue>
+        <ivalue valueName="cameraY">8</ivalue>
+        <ivalue valueName="cameraZ">22</ivalue>
+        <!-- Other useful parameters -->
+        <ivalue valueName="speed">2</ivalue>
+        <ivalue valueName="heading">0</ivalue>
+        <ivalue valueName="actorType">0</ivalue>
+        <ivalue valueName="collider">1</ivalue>
+        <!-- For the terrain detection system -->
+        <ivalue valueName="detectTerrain">0</ivalue>
+        <!-- For the physics system -->
+        <ivalue valueName="enablePhysics">1</ivalue>
+        <fvalue valueName="mass">60.0</fvalue>
+    </section>
+</actor>
+

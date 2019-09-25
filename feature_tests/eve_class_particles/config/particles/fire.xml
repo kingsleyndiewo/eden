@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright ©2009 Funtrench Limited. -->
+<!-- Particle definition for EveTest Fire particle driver -->
+<driver>
+    <!-- The values under each section should be in the format
+            <value valueName="Item">String value of item</value>
+            <bvalue valueName="Item">Boolean value of item (0 or 1)</bvalue>
+            <fvalue valueName="Item">Float value of item</fvalue>
+            <ivalue valueName="Item">Integer value of item</ivalue>
+        CSV values are comma-separated string values; such as:
+            <value valueName="Item">Me,You,Him,Her</value>
+    -->
+    <section Name="Generator">
+        <!-- Common generator settings -->
+        <!-- Generator position -->
+        <fvalue valueName="posX">0.0</fvalue>
+        <fvalue valueName="posY">0.0</fvalue>
+        <fvalue valueName="posZ">0.0</fvalue>
+        <!-- Generator HPR orientation -->
+        <fvalue valueName="genH">0.0</fvalue>
+        <fvalue valueName="genP">0.0</fvalue>
+        <fvalue valueName="genR">0.0</fvalue>
+        <!-- Generator scale -->
+        <fvalue valueName="scaleX">1.0</fvalue>
+        <fvalue valueName="scaleY">1.0</fvalue>
+        <fvalue valueName="scaleZ">1.0</fvalue>
+    </section>    
+    <section Name="Particles">
+        <!-- Parameters for the Particles object -->
+        <subsection Name="General">
+            <!-- The driver name -->
+            <value valueName="name">Fire</value>
+            <!-- The factory, renderer and emitter to use:
+                Factory - PointParticleFactory or ZSpinParticleFactory
+                Renderer - PointParticleRenderer, LineParticleRenderer,
+                    SparkleParticleRenderer, SpriteParticleRenderer,
+                    GeomParticleRenderer
+                Emitter - BoxEmitter, DiscEmitter, PointEmitter,
+                    RectangleEmitter, RingEmitter, SphereSurfaceEmitter,
+                    SphereVolumeEmitter, TangentRingEmitter
+            -->
+            <value valueName="factory">PointParticleFactory</value>
+            <value valueName="renderer">SpriteParticleRenderer</value>
+            <value valueName="emitter">DiscEmitter</value>
+            <!-- General configuration for particles:
+                poolSize - maximum number of simultaneous particles (0 to
+                            infinity)
+                birthRate - seconds between particle births (0 to infinity)
+                litterSize - number of particles created at each birth (1 to
+                            infinity)
+                litterSpread - variation of litter size (0 to infinity)
+                localVelocityFlag - whether or not velocities are absolute
+                            (boolean)
+                systemGrowsOlder - whether or not the system has a lifespan
+                            (boolean)
+                systemLifespan - age of the system in seconds (0 to infinity)
+            -->
+            <ivalue valueName="poolSize">1024</ivalue>
+            <fvalue valueName="birthRate">0.02</fvalue>
+            <ivalue valueName="litterSize">10</ivalue>
+            <ivalue valueName="litterSpread">0</ivalue>
+            <fvalue valueName="systemLifeSpan">1200.0</fvalue>
+            <bvalue valueName="LVF">1</bvalue>
+            <bvalue valueName="SGOF">0</bvalue>
+        </subsection>
+        <subsection Name="Factory">
+            <!-- Common factory options -->
+            <fvalue valueName="lifeSpanBase">0.5</fvalue>
+            <fvalue valueName="lifeSpanSpread">0.0</fvalue>
+            <fvalue valueName="massBase">1.0</fvalue>
+            <fvalue valueName="massSpread">0.0</fvalue>
+            <fvalue valueName="TVB">400.0</fvalue>
+            <fvalue valueName="TVSpread">0.0</fvalue>
+        </subsection>
+        <subsection Name="Renderer">
+            <!-- Common renderer options:
+                alphaMode - Alpha setting over particle lifetime
+                        0 = PR_ALPHA_NONE
+                        1 = PR_ALPHA_OUT
+                        2 = PR_ALPHA_IN
+                        3 = PR_ALPHA_USER
+                userAlpha - Alpha value for ALPHA_USER alpha mode (Float) 
+            -->
+            <ivalue valueName="alphaMode">1</ivalue>
+            <fvalue valueName="userAlpha">0.22</fvalue>
+            <!-- For SpriteParticle renderers only -->
+            <value valueName="texture">sparkle.png</value>
+            <fvalue valueName="colR">1.0</fvalue>
+            <fvalue valueName="colG">1.0</fvalue>
+            <fvalue valueName="colB">1.0</fvalue>
+            <fvalue valueName="colA">1.0</fvalue>
+            <bvalue valueName="xScaleFlag">1</bvalue>
+            <bvalue valueName="yScaleFlag">1</bvalue>
+            <bvalue valueName="animAngleFlag">0</bvalue>
+            <fvalue valueName="initialXScale">0.005</fvalue>
+            <fvalue valueName="finalXScale">0.02</fvalue>
+            <fvalue valueName="initialYScale">0.01</fvalue>
+            <fvalue valueName="finalYScale">0.02</fvalue>
+            <fvalue valueName="nonAnimatedTheta">0.00</fvalue>
+            <ivalue valueName="blendMethod">0</ivalue>
+            <bvalue valueName="disableAlpha">0</bvalue>
+        </subsection>
+        <subsection Name="Emitter">
+            <!-- Common emitter options:
+                emissionType - Emission mode
+                        0 = ET_EXPLICIT
+                        1 = ET_RADIATE
+                        2 = ET_CUSTOM
+                explicitLaunchVector - initial velocity in explicit mode (XYZ)
+                radiateOrigin - point particles launch away from in radiate
+                    mode (XYZ)
+                amplitude - launch velocity multiplier (-inf to inf)
+                amplitudeSpread - spread for launch velocity multiplier (0 to
+                    infinity)
+                offsetForce - user defined force (x,y,z)
+            -->
+            <ivalue valueName="emissionType">1</ivalue>
+            <!-- Explicit launch vector -->
+            <fvalue valueName="elvX">1.0</fvalue>
+            <fvalue valueName="elvY">0.0</fvalue>
+            <fvalue valueName="elvZ">0.0</fvalue>
+            <!-- Radiate origin -->
+            <fvalue valueName="roX">0.0</fvalue>
+            <fvalue valueName="roY">0.0</fvalue>
+            <fvalue valueName="roZ">0.0</fvalue>
+            <!-- offset Force -->
+            <fvalue valueName="offX">0.0</fvalue>
+            <fvalue valueName="offY">0.0</fvalue>
+            <fvalue valueName="offZ">3.0</fvalue>
+            <!-- other parameters -->
+            <fvalue valueName="amplitude">1.0</fvalue>
+            <fvalue valueName="amplitudeSpread">0.0</fvalue>
+            <!-- For Disc emitters only -->
+            <fvalue valueName="discRadius">0.5</fvalue>
+            <fvalue valueName="outerAngle">0.0</fvalue>
+            <fvalue valueName="innerAngle">0.0</fvalue>
+            <fvalue valueName="outerMagnitude">0.0</fvalue>
+            <fvalue valueName="innerMagnitude">0.0</fvalue>
+            <bvalue valueName="cubicLerping">0</bvalue>
+        </subsection>  
+    </section>
+    <section Name="ForceGroup">
+        <!-- Parameters for the ForceGroup object -->
+        <subsection Name="forceGeneral">
+            <!-- Common ForceGroup options:
+                nullSection - whether this section is ignored (boolean)
+                fgName - the force group name
+                forceCount - the number of forces
+            -->
+            <bvalue valueName="nullSection">1</bvalue>
+        </subsection>
+    </section>    
+</driver>

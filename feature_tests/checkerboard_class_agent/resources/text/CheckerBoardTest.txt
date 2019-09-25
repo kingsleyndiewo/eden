@@ -1,0 +1,12 @@
+INTRODUCTION
+
+CheckerBoard Test is a simple 3D board that demonstrates the ease
+of using the Eden Gaming Engine in loading a board-type scene. An
+additional feature is the automatic arrangement of checkers
+pieces which gives you the foundation for a neat game. The agent
+test demonstrates an AI game using the default agent - bruteRandom.
+
+Features Demonstrated:
+
+    - Loading a checkers board
+    - CheckerBoard features - AI 2-player game using bruteRandom

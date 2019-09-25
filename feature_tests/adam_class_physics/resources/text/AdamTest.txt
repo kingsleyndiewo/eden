@@ -1,0 +1,26 @@
+INTRODUCTION
+
+Adam Test is a moderately advanced 3D scene that demonstrates
+the ease of using the Eden Gaming Engine's more practical features
+in actual development of games. In the advanced physics test we introduce
+the concepts of gravity and other forces. We demonstrate the Panda physics
+engine's basic character and in addition we showcase Eden's rich physics
+features.
+
+Features Demonstrated:
+
+    - Creation and Genesis features
+    - Basic Adam features
+    - Physics Engine (global forces, jetpacks, gravity)
+    
+Additional Notes:
+
+    - This feature test begins to demonstrate actual game-making
+        capabilities and should interest potential and actual
+        developers.
+    - Miranda's boots have a bit of difficulty making her fly because they
+        have a force of only 9Newtons while the gravitational pull exceeds
+        that. The reason she doesn't come down immediately you disable the
+        boots is momentum.
+    - Ralph is a type 2 collider (both from & into object) so he too can't
+        pass through walls like Miranda but he can be bumped into by her.

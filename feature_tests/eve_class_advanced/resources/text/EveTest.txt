@@ -1,0 +1,24 @@
+INTRODUCTION
+
+Eve Test is a moderately advanced 3D scene that demonstrates
+the ease of using the Eden Gaming Engine's more practical
+features in actual development of games.
+
+In the advanced sample we introduce the cornerstone of 3D FPS games -
+object attachment (also known as holding). Though this is a Genesis super-class
+feature, the level of complexity is suited for a sample of advanced level. We
+also introduce the Glass2D class which allows for the creation of heads-up
+displays and other floating displays.
+
+Features Demonstrated:
+
+    - Creation, Adam-like and Genesis features
+    - Eve standard features
+    - Loading inventories (Genesis feature)
+    - Holding objects and cycling through an inventory
+    - Heads-up displays
+    
+Additional Notes:
+
+    - Eve is currently the most advanced super-class, being a
+        significant code-base for the Simulator super-classes.

@@ -1,0 +1,24 @@
+INTRODUCTION
+
+Creation Test is a simple 3D scene that demonstrates the ease of
+using the Eden Gaming Engine in loading a world. A model is also
+loaded to demonstrate the loading of geometry. In the advanced
+feature test we explore the generation of terrain in place of a
+loaded world.
+
+Features Demonstrated:
+
+    - Generating a world from a heightfield
+    - All other features of the simple feature test
+    
+Additional Notes:
+
+    - The middle mouse button (mouse wheel held down) is used
+        to orient the model (rotate it in the HPR plane). The
+        left mouse button moves it in the screen's X (across)
+        and Z (top-bottom) planes. Finally, the right mouse
+        button moves it in the screen's Y (into) plane.
+    - Use C to clear all text from the screen.
+    - Note how moving the model away makes the features less
+        defined. Play around with minimumLOD in plane.xml to
+        adjust the clearness at the focal point.

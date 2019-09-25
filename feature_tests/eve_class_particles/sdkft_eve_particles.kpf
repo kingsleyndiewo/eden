@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Komodo Project File - DO NOT EDIT -->
+<project id="faffad6e-8813-446a-ba9c-1134dc089655" kpf_version="4" name="sdkft_eve_particles.kpf">
+<preference-set idref="faffad6e-8813-446a-ba9c-1134dc089655">
+  <boolean id="import_live">1</boolean>
+</preference-set>
+</project>

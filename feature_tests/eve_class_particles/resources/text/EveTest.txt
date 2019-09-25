@@ -1,0 +1,20 @@
+INTRODUCTION
+
+Eve Test is a moderately advanced 3D scene that demonstrates
+the ease of using the Eden Gaming Engine's more practical
+features in actual development of games.
+
+With the Eve class, all the features of the Creation and Genesis
+Classes are available, with the addition of a default main actor
+as in Adam. For Eve however, the default actor is variable and
+can be changed by mouse selection in the 3D scene.
+
+In the third advanced sample we include particle system features.
+The particle generator is a feature of Creation and is presented
+here for better understanding.
+
+Features Demonstrated:
+
+    - Creation, Adam-like and Genesis features
+    - Eve and advanced Eve (I and II) features
+    - Particle Systems

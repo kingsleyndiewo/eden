@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright ©2012 Intellect Alliance. -->
+<!-- Inventory details for Miranda's Tools -->
+<inventory>
+    <!-- The values under each section should be in the format
+            <value valueName="Item">String value of item</value>
+            <fvalue valueName="Item">Float value of item</fvalue>
+            <ivalue valueName="Item">Integer value of item</ivalue>
+    -->
+    <section Name="InventoryDetails">
+        <!-- Loadable items section -->
+        <subsection Name="Names">
+            <!-- Unique identifier for each item. Use item_n as a convention
+                though it will not be enforced. -->
+            <value valueName="item_1">banana</value>
+            <value valueName="item_2">candycane</value>
+            <value valueName="item_3">sword</value>
+        </subsection>
+        <subsection Name="Initial">
+            <!-- We have to specify which item begins visible, set 'None'
+                if you want them all hidden at time of loading -->
+            <value valueName="initVisible">banana</value>
+        </subsection>    
+    </section>
+    <section Name="ItemDetails">
+        <!-- Each named item above must have an itemsection below! -->
+        <itemsection Name="banana">
+            <!-- Model -->
+            <value valueName="model">banana.egg.pz</value>
+            <!-- Scale values -->
+            <fvalue valueName="scaleX">1.30</fvalue>
+            <fvalue valueName="scaleY">1.30</fvalue>
+            <fvalue valueName="scaleZ">1.30</fvalue>
+            <!-- Position values -->
+            <fvalue valueName="posX">0.08</fvalue>
+            <fvalue valueName="posY">-0.1</fvalue>
+            <fvalue valueName="posZ">0.09</fvalue>
+            <!-- HPR values -->
+            <ivalue valueName="itemH">0</ivalue>
+            <ivalue valueName="itemP">-90</ivalue>
+            <ivalue valueName="itemR">0</ivalue>
+        </itemsection>
+        <itemsection Name="candycane">
+            <!-- Model -->
+            <value valueName="model">candycane.egg.pz</value>
+            <!-- Scale values -->
+            <fvalue valueName="scaleX">0.75</fvalue>
+            <fvalue valueName="scaleY">0.75</fvalue>
+            <fvalue valueName="scaleZ">0.75</fvalue>
+            <!-- Position values -->
+            <fvalue valueName="posX">0.15</fvalue>
+            <fvalue valueName="posY">-0.99</fvalue>
+            <fvalue valueName="posZ">-0.22</fvalue>
+            <!-- HPR values -->
+            <ivalue valueName="itemH">90</ivalue>
+            <ivalue valueName="itemP">0</ivalue>
+            <ivalue valueName="itemR">90</ivalue>
+        </itemsection>
+        <itemsection Name="sword">
+            <!-- Model -->
+            <value valueName="model">sword.egg.pz</value>
+            <!-- Scale values -->
+            <fvalue valueName="scaleX">0.75</fvalue>
+            <fvalue valueName="scaleY">0.75</fvalue>
+            <fvalue valueName="scaleZ">0.75</fvalue>
+            <!-- Position values -->
+            <fvalue valueName="posX">0.11</fvalue>
+            <fvalue valueName="posY">0.19</fvalue>
+            <fvalue valueName="posZ">0.06</fvalue>
+            <!-- HPR values -->
+            <ivalue valueName="itemH">0</ivalue>
+            <ivalue valueName="itemP">0</ivalue>
+            <ivalue valueName="itemR">90</ivalue>
+        </itemsection>
+    </section>    
+</inventory>

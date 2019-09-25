@@ -1,0 +1,30 @@
+INTRODUCTION
+
+Eve Test is a moderately advanced 3D scene that demonstrates
+the ease of using the Eden Gaming Engine's more practical
+features in actual development of games.
+
+With the Eve class, all the features of the Creation and Genesis
+Classes are available, with the addition of a default main actor
+as in Adam. For Eve however, the default actor is variable and
+can be changed by mouse selection in the 3D scene.
+
+In the second advanced sample we include a geometrical mipmapped
+terrain instead of the usual plane.egg. We also demonstrate the
+terrain detection that is built-in in Eden. Watch the HUD display
+the current avatar's Z co-ordinate, which is updated as the
+terrain rises and falls.
+
+Another interesting Creation feature that we introduce here is the
+recording of sequenced-image video (SIV). This feature is pretty
+memory-intensive so watch the FPS value you choose.
+
+Features Demonstrated:
+
+    - Creation, Adam-like and Genesis features
+    - Eve and advanced Eve features
+    - Terrain Generation
+    - Changing the LOD focal point from base.camera
+    - Terrain detection, which allows an actor to walk over
+        uneven terrain with accurate Z-axis updating
+    - SIV video recording

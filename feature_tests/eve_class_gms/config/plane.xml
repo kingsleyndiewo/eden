@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright ©2009 Funtrench Limited. -->
+<!-- World details for EveTest Geometrical MipMapping -->
+<terrain>
+    <!-- The values under each section should be in the format
+            <value valueName="Item">String value of item</value>
+            <fvalue valueName="Item">Float value of item</fvalue>
+            <ivalue valueName="Item">Integer value of item</ivalue>
+    -->
+    <section Name="terrainDetails">
+        <!-- Description of the terrain -->
+        <value valueName="name">world</value>
+        <!-- Source of the heightfield:
+            0 - MVC images/terrain directory (from Eden 0.1.2)
+            1 - other location
+        -->
+        <ivalue valueName="source">0</ivalue>
+        <value valueName="heightField">hf_512_10.png</value>
+        <ivalue valueName="blockSize">32</ivalue>
+        <ivalue valueName="chunkQuality">100</ivalue>
+        <!-- Z-axis exaggeration, usually wants large figures -->
+        <fvalue valueName="heightScale">1.0</fvalue>
+        <ivalue valueName="autoUpdate">1</ivalue>
+        <!-- Terrain base color; RGB -->
+        <fvalue valueName="baseR">0.0</fvalue>
+        <fvalue valueName="baseG">0.73</fvalue>
+        <fvalue valueName="baseB">0.0</fvalue>
+        <!-- Terrain texture file; if none, set textured to 0 -->
+        <ivalue valueName="textured">1</ivalue>
+        <value valueName="baseTexture">grass512.jpg</value>
+        <!-- Texture wrap mode
+            0 - WMRepeat
+            1 - WMClamp
+            2 - WMBorderColor (the base color will be used as border color)
+            3 - WMMirror
+        -->
+        <ivalue valueName="wrapMode">0</ivalue>
+        <ivalue valueName="disableLOD">0</ivalue>
+        <!-- Focal point of the LOD algorithm (not needed if disableLOD is 1):
+            0 - base.camera
+            1 - a world co-ordinate (must be provided)
+        -->
+        <ivalue valueName="focalPointNode">0</ivalue>
+        <!-- Not necessary if focalPointNode is not 1 -->
+        <fvalue valueName="focalX">0.0</fvalue>
+        <fvalue valueName="focalY">0.0</fvalue>
+        <fvalue valueName="focalZ">0.0</fvalue>
+        <ivalue valueName="minimumLOD">2</ivalue>
+    </section>
+</terrain>

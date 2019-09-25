@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright ©2009 Funtrench Limited. -->
+<!-- Essential configuration for the CheckerBoard Class -->
+<configuration>
+    <!-- The values under each section should be in the format
+            <value valueName="Item">String value of item</value>
+            <bvalue valueName="Item">Boolean Integer value of item</bvalue>
+            <fvalue valueName="Item">Float value of item</fvalue>
+            <ivalue valueName="Item">Integer value of item</ivalue>
+    -->
+    <section Name="About">
+        <!-- Game ID section -->
+        <!-- You can put as many values as you like but they appear as
+             you specify in displayOrder which should be a comma-separated
+             sequence. The colons will be put for you in the format
+             [Item: Value of Item]. At the very least put the game title
+             and author here -->
+        <value valueName="Title">CheckerBoard Agent Sample Client</value>
+        <value valueName="Author">Project Eden Development Team</value>
+        <value valueName="Company">Funtrench Limited</value>
+        <value valueName="Legal Copyright">(C)2009 Funtrench Limited</value>
+        <value valueName="Genre">Eden3D Board Client</value>
+        <value valueName="Music">Enter the Cave - Wasili</value>
+        <value valueName="displayOrder">Title,Author,Company,Legal Copyright,Genre,Music</value>
+    </section>
+    <section Name="Startup">
+        <!-- Startup settings section -->
+        <!-- The only essential subsection is WorldDetails. The rest do not
+             have to exist.
+             To omit Visuals, set visualsCount = 0
+             To omit Sound, set playSound = 0
+        -->
+        <subsection Name="WorldDetails">
+            <!-- The world type - file-based geometry or heightfield-based
+                terrain. Because most worlds during development of Eden were
+                file models, the comments below largely apply to such.
+                0 - File-based geometry
+                1 - Generated geometry (GeoMipMap or Tesselated)
+            -->
+            <ivalue valueName="worldType">0</ivalue>
+            <!-- Details about the main world geometry. The file MUST be
+                 in the geometry directory! You can omit the filename
+                 extension if no conflicting names exist
+                 We give the file name and the XYZ scaling to apply -->
+            <value valueName="world">board.egg.pz</value>
+            <!-- the texture to be applied to the board; must be in images -->
+            <!-- for no texture use "None" -->
+            <value valueName="boardTexture">board_1.jpg</value>
+            <fvalue valueName="scaleX">1.0</fvalue>
+            <fvalue valueName="scaleY">1.0</fvalue>
+            <fvalue valueName="scaleZ">1.0</fvalue>
+            <!-- initial position -->
+            <fvalue valueName="posX">5.0</fvalue>
+            <fvalue valueName="posY">40.0</fvalue>
+            <fvalue valueName="posZ">0.0</fvalue>
+            <!-- board dimensions - co-ordinates of piece -->
+            <fvalue valueName="row1">-15.5</fvalue>
+            <fvalue valueName="column1">-23.5</fvalue>
+            <fvalue valueName="row8">23.5</fvalue>
+            <fvalue valueName="column8">15.5</fvalue>
+            <!-- The delay between moves in seconds -->
+            <ivalue valueName="moveInterval">1</ivalue>
+            <!-- Whether to flip the board at the end of every turn -->
+            <bvalue valueName="autoFlip">0</bvalue>
+            <!-- Whether to enable physics -->
+            <ivalue valueName="enablePhysics">0</ivalue>
+            <!-- The collision bitmask -->
+            <ivalue valueName="collisionBM">1</ivalue>
+            <!-- Mouse cursor visibility. This affects visibility in the
+                 game and can be changed in the scripts. -->
+            <ivalue valueName="showMouse">0</ivalue>
+            <ivalue valueName="defaultFPS">90</ivalue>
+            <!-- Visuals and Sounds Settings -->
+            <ivalue valueName="visualsCount">3</ivalue>
+            <ivalue valueName="playSound">1</ivalue>
+            <!-- Game Settings
+                 0 - Chess
+                 1 - Checkers
+            -->
+            <ivalue valueName="gameType">1</ivalue>
+            <!-- Use 1 to keep camera defaults. If this value is not 1 then
+                 the Camera subsection MUST exist-->
+            <ivalue valueName="cameraDefaults">0</ivalue>
+        </subsection>
+        <subsection Name="Pieces">
+            <!-- Settings for the chess/checkers pieces -->
+            <!-- Chess has 5 pieces while checkers has 4 -->
+            <value valueName="manBlack">pawn.egg.pz</value>
+            <value valueName="manWhite">pawn.egg.pz</value>
+            <value valueName="kingBlack">queen.egg.pz</value>
+            <value valueName="kingWhite">queen.egg.pz</value>
+            <!-- The pieces must have same scale -->
+            <fvalue valueName="scaleX">4.5</fvalue>
+            <fvalue valueName="scaleY">4.5</fvalue>
+            <fvalue valueName="scaleZ">4.5</fvalue>
+            <!-- Piece textures -->
+            <!-- Use None to keep board texture -->
+            <value valueName="texBlack">Piece1.jpg</value>
+            <value valueName="texWhite">Piece2.jpg</value>
+        </subsection>
+        <subsection Name="Messages">
+            <!-- Settings for the messages subsystem -->
+            <!-- Loaded manually so this is not a compulsory section
+                 Use initMessageSystem() in Board_8x8 to load -->
+            <value valueName="pieceMove">piece-moved</value>
+            <value valueName="kingEvent">king-piece</value>
+            <value valueName="captureEvent">piece-capture</value>
+            <value valueName="victoryEvent">game-victory</value>
+            <value valueName="drawEvent">game-draw</value>
+        </subsection>
+        <subsection Name="Camera">
+            <!-- Settings for the camera -->
+            <!-- Camera behavior; either FIXED or MOUSED. If MOUSED then there's
+                 no need for XYZ/HPR information -->
+            <value valueName="cameraTrait">FIXED</value>
+            <!-- Initial position of camera in world -->
+            <fvalue valueName="cameraX">0.0</fvalue>
+            <fvalue valueName="cameraY">0.0</fvalue>
+            <fvalue valueName="cameraZ">70.0</fvalue>
+            <!-- Camera orientation -->
+            <fvalue valueName="cameraH">0.0</fvalue>
+            <!-- Pitch of -90 is straight down, 90 is straight up. 0 is level. -->
+            <fvalue valueName="cameraP">-60.0</fvalue>
+            <fvalue valueName="cameraR">0.0</fvalue>
+        </subsection>
+        <subsection Name="Visuals">
+            <!-- Opening images and/or videos. -->
+            <!-- If the screens are > 0 then the first thing must be the
+                 names of the visuals in order of appearance 1 to n. -->
+            <!-- You must specify valueName="screen_n" for ALL image resources -->     
+            <!-- You must specify valueName="video_n" for ALL video resources -->
+            <!-- You must specify a screen position for all visuals after the
+                 filename - ':'-separated -->
+            <value valueName="screen_1">screen1.png:0:0:0</value>
+            <value valueName="screen_2">screen2.png:0:0:0</value>
+            <value valueName="screen_3">screen3.png:0:0:0</value>
+            <!-- Use valueName="interval" exclusively -->
+            <fvalue valueName="interval">3.0</fvalue>
+        </subsection>
+        <subsection Name="Sound">
+            <!-- Opening music if any. playSound specifies whether there
+                 is a startup sound (0 for NO). Here just the name of the file
+                 and whether we play along with visuals or after them.
+                 0 - sound plays from game startup
+                 1 - sound plays after the opening visuals
+            -->
+            <!-- You must specify a sound volume for the sound after the
+                 filename - ':'-separated -->
+            <value valueName="music">sound1.mp3:0.5</value>
+            <ivalue valueName="follows">0</ivalue>
+        </subsection>    
+    </section>
+</configuration>

@@ -1,0 +1,24 @@
+INTRODUCTION
+
+Genesis Test is a simple 3D scene that demonstrates the ease of
+using the Eden Gaming Engine in loading a world. A models is also
+loaded to demonstrate the loading of geometry. A single actor is
+loaded to explore how the Genesis class extends Creation. The
+AI version of this sample shows how to use the libPandaAI functions
+in Eden to implement seek, evade, pursue, wander and other navigation
+functions.
+ 
+Features Demonstrated:
+
+    - Creation features
+    - Loading an actor
+    - Non-mouse, actor-centred camera manipulation
+    - AI functions
+    
+Additional Notes:
+
+    - This feature test introduces the concept of disabled mouse
+        camera control. The mouse no longer features in the scene
+        as a camera controller. In the Eve feature test we will
+        see a bit of what else the mouse can do.
+    - Note that we hide the cursor in the scene; we don't need it.

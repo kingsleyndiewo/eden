@@ -1,0 +1,18 @@
+INTRODUCTION
+
+CheckerBoard Test is a simple 3D board that demonstrates the ease
+of using the Eden Gaming Engine in loading a board-type scene. An
+additional feature is the automatic arrangement of checkers
+pieces which gives you the foundation for a neat game. This sample
+shows a replay of a game previously saved as XML.
+
+Features Demonstrated:
+
+    - Loading a checkers board
+    - Changing board skin - Board_8x8 feature
+    - CheckerBoard features - replay
+    
+Additional Notes:
+
+    - The Board_8x8 super-class inherits from Creation
+    - The CheckerBoard super-class inherits from Board_8x8 

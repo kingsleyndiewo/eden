@@ -1,0 +1,11 @@
+INTRODUCTION
+
+The spin version of this sample shows how to make an the world spin
+using the SpinCameraTask in Creation.
+ 
+Features Demonstrated:
+
+    - Creation features
+    - Loading an actor
+    - Non-mouse, actor-centred camera manipulation
+    - Spinning a world

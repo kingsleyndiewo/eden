@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright ©2009 Funtrench Limited. -->
+<!-- Physics details for CreationTest Physics ODE engine -->
+<odePhysics>
+    <!-- The values under each section should be in the format
+            <value valueName="Item">String value of item</value>
+            <fvalue valueName="Item">Float value of item</fvalue>
+            <ivalue valueName="Item">Integer value of item</ivalue>
+            <bvalue valueName="Item">Boolean integer value of item</bvalue>
+    -->
+    <section Name="Settings">
+        <!-- The ODE Space to use:
+            0 - OdeSimpleSpace
+            1 - OdeQuadTreeSpace
+            2 - OdeHashSpace
+        -->
+        <ivalue valueName="odeSpace">0</ivalue>
+        <!-- Terrain Detection; the Vec4 for the plane must exist as a CSV -->
+        <bvalue valueName="enableTerrainDetection">1</bvalue>
+        <!-- Use full colon ':' as separator -->
+        <value valueName="planeVec4">0:0:1:0</value>
+        <!-- Number of surfaces in the surface table -->
+        <ivalue valueName="surfaceCount">1</ivalue>
+        <!-- CSV of the surface entries; all must exist in the surface entries
+            section. Use full colon ':' as the separator
+        -->
+        <value valueName="surfaceList">Ground</value>
+    </section>
+    <section Name="SurfaceEntries">
+        <!-- surfaceId1, surfaceId2, mu, bounce, bounce_vel,
+            soft_erp, soft_cfm, slip, dampen
+        -->
+        <surface Name="Ground">
+            <ivalue valueName="surfaceID1">0</ivalue>
+            <ivalue valueName="surfaceID2">0</ivalue>
+            <!-- Coefficient of static friction; put negative number for infinity -->
+            <fvalue valueName="CSF">150.0</fvalue>
+            <!-- Surface bounciness between 0.0 and 1.0 -->
+            <fvalue valueName="bounce">0.95</fvalue>
+            <fvalue valueName="bounceVelocity">5.0</fvalue>
+            <fvalue valueName="softERP">0.9</fvalue>
+            <fvalue valueName="softCFM">0.00001</fvalue>
+            <!-- Coefficient of dynamic friction -->
+            <fvalue valueName="CDF">0.0</fvalue>
+            <fvalue valueName="dampingFactor">0.002</fvalue>
+        </surface>
+    </section>
+</odePhysics>

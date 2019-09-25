@@ -1,0 +1,1 @@
+Place all your text resources here - no rtf please. The fonts subdirectory should contain all your game TTF and/or EGG font resources.

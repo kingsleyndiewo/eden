@@ -1,0 +1,26 @@
+INTRODUCTION
+
+Creation Test is a simple 3D scene that demonstrates the ease of
+using the Eden Gaming Engine in loading a world. A model is also
+loaded to demonstrate the loading of geometry.
+
+Features Demonstrated:
+
+    - Loading a world
+    - Displaying images
+    - The task manager
+    - Displaying text from literal strings
+    - Displaying text files
+    - Using the config.xml file and the MVC system
+    - Accessing configuration options via worldData dictionary
+    - Showing/Hiding the mouse cursor
+    - Screen capture to JPEG files in the a specified directory
+    
+Additional Notes:
+
+    - The middle mouse button (mouse wheel held down) is used
+        to orient the model (rotate it in the HPR plane). The
+        left mouse button moves it in the screen's X (across)
+        and Z (top-bottom) planes. Finally, the right mouse
+        button moves it in the screen's Y (into) plane.
+    - Use C to clear all text from the screen.

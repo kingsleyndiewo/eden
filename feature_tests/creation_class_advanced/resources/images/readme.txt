@@ -1,0 +1,1 @@
+Place all your still images here. GIF is not supported! Use PNG and JPEG. Use BMP if it isn't too big.
