@@ -5,7 +5,7 @@
 # Developed by: Project Eden Development Team
 # Date: 21/08/2008
 # Place: Nairobi, Kenya
-# Copyright: (C)2008 Funtrench PLC
+# Copyright: (C)2008 Funtrench Limited
 # ---------------------------------------------
 from Eden.Eden3D.Simulators.Board.Board_8x8 import Board_8x8
 from Eden.Eden3D.Simulators.Board.checkers_globals import *
@@ -158,7 +158,7 @@ class CheckerBoard(Board_8x8):
     # ------------------SELECT-----------------------
     def processSelection(self):
         " process a mouse piece selection event "
-        if self.currentSelection in self.armies[0].keys():
+        if self.currentSelection in self.armies[0]:
             t_t = 0
         else:
             t_t = 1
@@ -251,7 +251,7 @@ class CheckerBoard(Board_8x8):
             self.legalMoves = self.computeMoves(piece, side)
             if self.legalMoves == None:
                 # check for a draw
-                for t_dt in self.armies[side].keys():
+                for t_dt in self.armies[side]:
                     if t_dt == piece:
                         # don't check for currently active piece
                             pass
@@ -276,7 +276,7 @@ class CheckerBoard(Board_8x8):
                 if serialSelect == False and self.capFlag != True:
                     # we must check if any other piece can capture
                     t_legalPieces = []
-                    for t_j in self.armies[side].keys():
+                    for t_j in self.armies[side]:
                         if t_j == piece:
                             # don't check for currently active piece
                             pass
@@ -394,11 +394,11 @@ class CheckerBoard(Board_8x8):
     # ------------------AI / RULES / REPLAY SERVICES------------------
     def checkOccupant(self, tile):
         " checks the occupant of a tile and returns (side, piece) "
-        for t_y in self.armies[0].keys():
+        for t_y in self.armies[0]:
             if self.armies[0][t_y][0] == tile:
                 # return the piece
                 return (0, t_y)
-        for t_z in self.armies[1].keys():
+        for t_z in self.armies[1]:
             if self.armies[1][t_z][0] == tile:
                 # return the piece
                 return (1, t_z)
@@ -468,7 +468,7 @@ class CheckerBoard(Board_8x8):
         # do a trial and error to get valid pieces
         t_val = []
         t_caps = []
-        for t_x in self.armies[self.sideTurn].keys():
+        for t_x in self.armies[self.sideTurn]:
             # select the piece
             t_b = self.selectPiece(self.sideTurn, t_x)
             if t_b == True:

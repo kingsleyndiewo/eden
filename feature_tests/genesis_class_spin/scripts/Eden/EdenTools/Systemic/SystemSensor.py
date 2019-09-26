@@ -29,11 +29,13 @@ class SystemSensor:
             pyRoot = t_y
             # get the Eden root (17/08/09) - Eden Inside
             edenRoot = 'Eden'
+            prefDisplay = 'pandadx8'
         else:
             # on Linux the Python root is usr/local/lib/python
             pyRoot = '/usr/local/lib/python'
             # get the Eden root (17/08/09) - Eden Inside
             edenRoot = 'Eden'
+            prefDisplay = 'pandagl'
         # get the Python version
         pyVer = python_version()
         # get the operating system
@@ -62,24 +64,27 @@ class SystemSensor:
             # prc file
             if customData == None:
                 # set default values
-                customData = {'win-origin':'-2 -2', 'window-title':'Eden 3D System', \
+                customData = {'win-origin':'-1 -1', 'window-title':'Eden 3D System', \
                     'fullscreen':True, 'audio-library-name':'p3openal_audio', \
-                    'extraPaths':[]}
+                    'extraPaths':[], 'load-display':prefDisplay}
                 # extra paths
                 customData['extraPaths'].append(edenRoot + "/Eden2D/fontLib")
             t_wo = ConfigVariableString('win-origin', customData['win-origin'])
             t_wt = ConfigVariableString('window-title', customData['window-title'])
             t_fs = ConfigVariableBool('fullscreen', customData['fullscreen'])
             t_al = ConfigVariableString('audio-library-name', customData['audio-library-name'])
+            t_dd = ConfigVariableString('load-display', customData['load-display'])
             # set the values if different
-            if t_wo.getValue() != '-2 -2':
-                t_wo.setValue('-2 -2')
+            if t_wo.getValue() != '-1 -1':
+                t_wo.setValue('-1 -1')
             if t_wt.getValue() != 'Eden 3D System':
                 t_wt.setValue('Eden 3D System')
             if t_fs.getValue() != True:
                 t_fs.setValue(True)
             if t_al.getValue() != 'p3openal_audio':
                 t_al.setValue('p3openal_audio')
+            if t_dd.getValue() == '':
+                t_dd.setValue(prefDisplay)
             # add extra paths to the model path
             t_fpt = getModelPath()
             for t_y in customData['extraPaths']:
@@ -89,7 +94,7 @@ class SystemSensor:
             t_ren = t_ren.getValue()
             t_valid = {'pandagl':'OpenGL', 'pandadx8':'DirectX 8.0', \
                 'pandadx9':'DirectX 9.0'}
-            if t_ren in t_valid.keys():
+            if t_ren in t_valid:
                 # we parsed a correct engine
                 self.systemData['renderer'] = t_valid[t_ren]
             else:

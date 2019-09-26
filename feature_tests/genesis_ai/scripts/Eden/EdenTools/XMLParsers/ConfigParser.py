@@ -5,9 +5,9 @@
 # Developed by: Project Eden Development Team
 # Date: 17/06/2008
 # Place: Nairobi, Kenya
-# Copyright: (C)2008 Funtrench PLC
+# Copyright: (C)2008 Funtrench Limited
 # ---------------------------------------------
-from XParser import XParser
+from .XParser import XParser
 # ---------------------------------------------
 # Class definition for the ConfigParser class
 # ---------------------------------------------

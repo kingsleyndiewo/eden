@@ -5,7 +5,7 @@
 # Developed by: Project Eden Development Team
 # Date: 21/08/2008
 # Place: Nairobi, Kenya
-# Copyright: (C)2008 Funtrench PLC
+# Copyright: (C)2008 Funtrench Limited
 # ---------------------------------------------
 from Eden.Eden3D.Simulators.Board.Board_8x8 import Board_8x8
 # ---------------------------------------------

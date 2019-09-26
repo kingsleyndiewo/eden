@@ -8,7 +8,7 @@
 # ---------------------------------------------
 from random import randint
 from direct.task import Task
-from text_globals import *
+from .text_globals import *
 import copy
 # ---------------------------------------------
 # A class to handle the drawing of 2D text on screen.
@@ -33,7 +33,7 @@ class Text2D:
                 try:
                     self.loadedFonts[t_y[1]] = loader.loadFont(t_y[0])
                 except IOError:
-                    print "Failed to load fonts"
+                    print("Failed to load fonts")
         # the default dictionary can be edited in the globals file
         self.textConfig = EdenDefaultProperties
         self.textConfig['ActiveFont'] = defaultFont
@@ -132,7 +132,7 @@ class Text2D:
             intervalSec = 3
         t_ivl = intervalSec * self.fpsValue
         # make a list of all the keys
-        textKeyList = self.texts.keys()
+        textKeyList = list(self.texts)
         self.soloRegister[t_t] = [textKeyList, t_ivl, cleanUp, 0]
     def clearScreen(self):
         " clears the surface( everything on aspect2d drawn from here ) "
@@ -153,7 +153,7 @@ class Text2D:
             t_s = '%s%d%d' % (textKey, self.nodeCount, t_n + t_g)
         else:
             # check if we have an existing node
-            if textKey in self.textNodeList.keys():
+            if textKey in self.textNodeList:
                 return None
             else:
                 # no mangling
@@ -181,7 +181,7 @@ class Text2D:
     def switchText(self, textKeySource, textKeyDest):
         " does a form of blitting "
         # use only for text that has same onscreen position
-        if textKeyDest not in self.textNodeList.keys():
+        if textKeyDest not in self.textNodeList:
             # the destination node does not exist
             return False
         else:

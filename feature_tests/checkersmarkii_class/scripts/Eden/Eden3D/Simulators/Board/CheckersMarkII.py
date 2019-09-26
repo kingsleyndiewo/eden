@@ -36,7 +36,7 @@ class CheckersMarkII(CheckerBoard):
             t_st = 1
         else:
             t_st = 0
-        for t_p in self.armies[t_st].keys():
+        for t_p in self.armies[t_st]:
             # check the capture hardcodes
             t_dl = self.parseHardCodes(t_st, t_p, True)
             if len(t_dl) != 0:

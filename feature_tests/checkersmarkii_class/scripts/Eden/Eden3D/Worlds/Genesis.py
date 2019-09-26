@@ -84,7 +84,7 @@ class Genesis(Creation):
     # --------------------------COLLISION DETECTION-----------------------------
     def setupActorCollision(self, actorName):
         " sets up collision detection for an actor "
-        if actorName not in self.actorStore.keys():
+        if actorName not in self.actorStore:
             # the specified actor does not exist in the world
             return False
         # setup sphere collision on the actorObject
@@ -107,7 +107,7 @@ class Genesis(Creation):
         " sets up collision for a geometry object "
         # I had to make this just for EdenMaze
         # removes the shaking bug of the pusher from cube-like objects
-        if objectName not in self.objectStore.keys():
+        if objectName not in self.objectStore:
             # the specified object does not exist in the world
             return False
         else:
@@ -229,7 +229,7 @@ class Genesis(Creation):
             actorDetails['name'] = overrideName
         # save the animations
         actorDetails['animations'] = {}
-        for t_i in actorXPU.Parser['XML_Values']['Animations_Values'].keys():
+        for t_i in actorXPU.Parser['XML_Values']['Animations_Values']:
             # build the pathname to the animation
             t_b = self.gameMVC.mvcStructure['tier_models']['actors'] + '/animations/'
             t_b += actorXPU.Parser['XML_Values']['Animations_Values'][t_i]
@@ -248,7 +248,7 @@ class Genesis(Creation):
         actorDetails['speed'] = actorXPU.Parser['XML_Values']['Setup_Values']['speed']
         # check for not-so-commons and save
         for t_nv in t_ncl:
-            if t_nv in actorXPU.Parser['XML_Values']['Setup_Values'].keys():
+            if t_nv in actorXPU.Parser['XML_Values']['Setup_Values']:
                 # save the rare setting
                 actorDetails[t_nv] = actorXPU.Parser['XML_Values']['Setup_Values'] \
                     [t_nv]
@@ -321,7 +321,7 @@ class Genesis(Creation):
     # --------------------------INVENTORY MANIPULATION-----------------------
     def selectInventoryItem(self, inventoryName, itemName):
         " shows the inventory item selected and hides the rest "
-        if itemName not in self.toolBox[inventoryName].keys():
+        if itemName not in self.toolBox[inventoryName]:
             # item is not in inventory
             return False
         else:
@@ -337,7 +337,7 @@ class Genesis(Creation):
     # --------------------------PHYSICS SERVICES-----------------------------
     def enableActorPhysics(self, actorName):
         " enables physics for an actor "
-        if actorName not in self.actorStore.keys():
+        if actorName not in self.actorStore:
             # the specified actor does not exist in the world
             return False
         else:
@@ -353,7 +353,7 @@ class Genesis(Creation):
             self.actorStore[actorName].physicsStatus = True
     def setActorMass(self, actorName, newMass):
         " sets the mass on a physics-enabled actor (KG) "
-        if actorName not in self.actorStore.keys():
+        if actorName not in self.actorStore:
             # the specified actor does not exist in the world
             return False
         elif self.actorStore[actorName].physicsStatus == False:
@@ -365,10 +365,10 @@ class Genesis(Creation):
                 [1].getPhysicsObject().setMass(newMass)
     def attachForceToActor(self, actorName, forceName):
         " attaches an existing force to an actor "
-        if actorName not in self.actorStore.keys():
+        if actorName not in self.actorStore:
             # the specified actor does not exist in the world
             return False
-        elif forceName not in self.physicsStore['forces'].keys():
+        elif forceName not in self.physicsStore['forces']:
             # the specified force does not exist
             return False
         elif self.actorStore[actorName].physicsStatus == False:
@@ -394,10 +394,10 @@ class Genesis(Creation):
                     [forceName][0])
     def removeForceFromActor(self, actorName, forceName):
         " removes an existing force from an actor "
-        if actorName not in self.actorStore.keys():
+        if actorName not in self.actorStore:
             # the specified actor does not exist in the world
             return False
-        elif forceName not in self.physicsStore['forces'].keys():
+        elif forceName not in self.physicsStore['forces']:
             # the specified force does not exist
             return False
         elif self.actorStore[actorName].physicsStatus == False:
@@ -418,10 +418,10 @@ class Genesis(Creation):
     def attachJetPackToActor(self, forceName, jetPack, actorName, \
         packPos = (0,0,0), packHpr = None):
         " convenience function for attaching jetpacks to actors "
-        if actorName not in self.actorStore.keys():
+        if actorName not in self.actorStore:
             # the specified actor does not exist in the world
             return False
-        elif forceName not in self.physicsStore['forces'].keys():
+        elif forceName not in self.physicsStore['forces']:
             # the specified force does not exist
             return False
         elif self.actorStore[actorName].physicsStatus == False:
@@ -455,10 +455,10 @@ class Genesis(Creation):
                     [forceName][0])
     def removeJetPackFromActor(self, forceName, jetPackName, actorName):
         " convenience function for removing jetpacks from actors "
-        if actorName not in self.actorStore.keys():
+        if actorName not in self.actorStore:
             # the specified actor does not exist in the world
             return False
-        elif forceName not in self.physicsStore['forces'].keys():
+        elif forceName not in self.physicsStore['forces']:
             # the specified force does not exist
             return False
         elif self.actorStore[actorName].physicsStatus == False:
@@ -501,19 +501,19 @@ class Genesis(Creation):
         # we capture the state of the controller keys
         self.controller[controlAction] = keyValue
         # we check the modifiers
-        for t_x in self.modifiers.keys():
+        for t_x in self.modifiers:
             self.modifiers[t_x][1] = self.getModifierKeyState(self.modifiers[t_x][0])
             self.walkerArgs[t_x] = self.modifiers[t_x][1]
     def updateActorsGFs(self, forceKey):
         " updates current actors when a new global force is created "
         # attach it to all actors loaded for physics so far
-        for t_x in self.physicsStore['actors'].keys():
+        for t_x in self.physicsStore['actors']:
             self.attachForceToActor(t_x, self.GFP + forceKey)
     def keyboardSetup(self):
         " sets up key mappings from config.xml "
         # get key mappings information
         self.XPU.getSectionValues('section','Keys')
-        for t_e in self.XPU.Parser['XML_Values']['Keys_Values'].keys():
+        for t_e in self.XPU.Parser['XML_Values']['Keys_Values']:
             t_f = self.XPU.Parser['XML_Values']['Keys_Values'][t_e]
             # set key mappings for movement
             self.accept(t_f, self.updateController, [t_e, True] )
@@ -524,7 +524,7 @@ class Genesis(Creation):
             self.XPU.getSectionValues('section','KeyModifiers')
             self.walkerArgs = {}
             # get key modifiers
-            for t_e in self.XPU.Parser['XML_Values']['KeyModifiers_Values'].keys():
+            for t_e in self.XPU.Parser['XML_Values']['KeyModifiers_Values']:
                 t_f = self.XPU.Parser['XML_Values']['KeyModifiers_Values'][t_e]
                 # set key modifiers
                 self.modifiers[t_e] = [t_f, False]

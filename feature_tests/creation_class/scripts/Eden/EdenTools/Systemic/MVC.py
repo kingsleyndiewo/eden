@@ -10,7 +10,7 @@
 import sys
 from os.path import *
 import os
-from mvc_globals import *
+from .mvc_globals import *
 from panda3d.core import getModelPath
 # ---------------------------------------------
 # Class definition for the MVC_System class
@@ -52,14 +52,14 @@ class MVC_System:
         try:
             t_fpt.appendPath(self.mvcStructure['tier_text']['fonts'])
         except KeyError:
-            print "Eden Warning: No fonts directory found"
+            print("Eden Warning: No fonts directory found")
     # ------------------BEHAVIOURS------------------------
     # ----------------------------------------------------
     def printMVC(self):
         " prints the MVC tree "
-        print self.mvcStructure['/']
+        print(self.mvcStructure['/'])
         for t_y in self.mvcStructure['MVC_Components']:
-            print '\t' + self.mvcStructure[t_y]
+            print('\t' + self.mvcStructure[t_y])
     # ------------------SERVICE METHODS-------------------
     # ----------------------------------------------------
     def verifyMVC(self, mvcRootDir):

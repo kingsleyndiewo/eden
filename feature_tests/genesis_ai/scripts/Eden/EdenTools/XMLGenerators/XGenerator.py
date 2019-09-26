@@ -5,7 +5,7 @@
 # Developed by: Project Eden Development Team
 # Date: 08/05/2009
 # Place: Nairobi, Kenya
-# Copyright: (C)2009 Funtrench PLC
+# Copyright: (C)2009 Funtrench Limited
 # ---------------------------------------------
 from xml.dom.minidom import Document, Node
 # ---------------------------------------------
@@ -75,7 +75,7 @@ class XGenerator:
         self.elementStore['sections'][section].appendChild(t_Cmt)
     def printFile(self, tabWidth = '\t'):
         " outputs the generated XML to screen with specified indent "
-        print self.XMLDocument.toprettyxml(indent = tabWidth)
+        print(self.XMLDocument.toprettyxml(indent = tabWidth))
     def generateXMLFile(self, fileName, tabWidth = '    '):
         " saves the generated XML to file "
         # use ordinary file I/O method

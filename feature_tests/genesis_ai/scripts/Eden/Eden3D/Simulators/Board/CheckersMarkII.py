@@ -5,7 +5,7 @@
 # Developed by: Project Eden Development Team
 # Date: 30/05/2009
 # Place: Nairobi, Kenya
-# Copyright: (C)2009 Funtrench PLC
+# Copyright: (C)2009 Funtrench Limited
 # ---------------------------------------------
 from Eden.Eden3D.Simulators.Board.CheckerBoard import CheckerBoard
 from random import randint
@@ -36,7 +36,7 @@ class CheckersMarkII(CheckerBoard):
             t_st = 1
         else:
             t_st = 0
-        for t_p in self.armies[t_st].keys():
+        for t_p in self.armies[t_st]:
             # check the capture hardcodes
             t_dl = self.parseHardCodes(t_st, t_p, True)
             if len(t_dl) != 0:

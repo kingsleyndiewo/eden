@@ -5,7 +5,7 @@
 # Developed by: Project Eden Development Team
 # Date: 08/08/2008
 # Place: Nairobi, Kenya
-# Copyright: (C)2008 Funtrench PLC
+# Copyright: (C)2008 Funtrench Limited
 # ---------------------------------------------
 from direct.gui.DirectGui import *
 from direct.gui import DirectGuiGlobals
@@ -134,7 +134,7 @@ class Menu2D:
         self.menuList[t_n]['visible'] = True
     def showMenu(self, menuName):
         " makes a hidden menu visible "
-        if menuName not in self.menuList.keys():
+        if menuName not in self.menuList:
             # not a loaded menu
             return False
         elif self.menuList[menuName]['visible'] == True:
@@ -145,7 +145,7 @@ class Menu2D:
         self.menuList[menuName]['visible'] = True
     def hideMenu(self, menuName):
         " makes a visible menu invisible "
-        if menuName not in self.menuList.keys():
+        if menuName not in self.menuList:
             # not a loaded menu
             return False
         elif self.menuList[menuName]['visible'] == False:
@@ -157,10 +157,10 @@ class Menu2D:
     def changeRadioValue(self, menuName, buttonName, newValue):
         " programmatically modifies the indicator value "
         # we need this function because the process is 2-calls
-        if menuName not in self.menuList.keys():
+        if menuName not in self.menuList:
             # not a loaded menu
             return False
-        elif buttonName not in self.menuList[menuName]['radioButtons'].keys():
+        elif buttonName not in self.menuList[menuName]['radioButtons']:
             # the radio button does not exist
             return False
         else:

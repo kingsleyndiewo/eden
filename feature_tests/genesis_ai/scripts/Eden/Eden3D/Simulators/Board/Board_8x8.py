@@ -5,7 +5,7 @@
 # Developed by: Project Eden Development Team
 # Date: 22/05/2009
 # Place: Nairobi, Kenya
-# Copyright: (C)2008 Funtrench PLC
+# Copyright: (C)2008 Funtrench Limited
 # ---------------------------------------------
 from Eden.Eden3D.Worlds.Creation import *
 from Eden.EdenTools.XMLParsers.ConfigParser import ConfigParser
@@ -190,7 +190,7 @@ class Board_8x8(Creation):
         # message subsystem will be dealt with in daughter classes
         # just load settings and set up callbacks if any
         self.messageLibrary = {}
-        for t_x in self.XPU.Parser['XML_Values']['Messages_Values'].keys():
+        for t_x in self.XPU.Parser['XML_Values']['Messages_Values']:
             self.messageLibrary[t_x] = self.XPU.Parser['XML_Values'] \
                 ['Messages_Values'][t_x]
             if callBackBundle != None:
@@ -284,7 +284,7 @@ class Board_8x8(Creation):
         movesXPU.parseFile(t_s)
         movesXPU.getSectionValues('section','Moves')
         t_m = []
-        t_k = movesXPU.Parser['XML_Values']['Moves_Values'].keys()
+        t_k = list(movesXPU.Parser['XML_Values']['Moves_Values'])
         t_k.sort()
         for t_x in t_k:
             # split into CSV list
@@ -335,7 +335,7 @@ class Board_8x8(Creation):
         if self.customMessagesFlag == True and eventName != '':
             messenger.send(self.messageLibrary[eventName])
         if self.debugFlag == True:
-            print messageStr, extraData
+            print(messageStr, extraData)
         if self.hudPresent == True:
             # update the HUD
             self.hudBrush.menuList['Game']['labels']['Message']['text'] = messageStr

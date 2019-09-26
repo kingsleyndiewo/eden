@@ -63,7 +63,7 @@ class XParser:
             # search for the tagValue requested
             for x in t_p:
                 # the section must have the given tagName
-                if tagName in x.attributes.keys():
+                if tagName in x.attributes:
                     t_a = x.attributes[tagName]
                     if t_a.value == tagValue:
                         # the tagValue was found

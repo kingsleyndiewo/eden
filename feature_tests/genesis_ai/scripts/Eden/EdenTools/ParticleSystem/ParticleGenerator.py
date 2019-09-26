@@ -5,7 +5,7 @@
 # Developed by: Project Eden Development Team
 # Date: 13/09/2008
 # Place: Nairobi, Kenya
-# Copyright: (C)2008 Funtrench PLC
+# Copyright: (C)2008 Funtrench Limited
 # ---------------------------------------------
 from direct.particles.Particles import Particles
 from direct.particles.ParticleEffect import ParticleEffect
@@ -32,10 +32,10 @@ class ParticleGenerator:
         # delete all instances of '\r'
         t_data = t_data.replace('\r', '')
         try:
-            exec t_data
+            exec(t_data)
         except:
-            print 'Failed to load particle driver file: ', \
-            repr(fileName)
+            print('Failed to load particle driver file: ', \
+            repr(fileName))
             raise
     def setOrigin(self, parentNode, xyzPos = (0,0,0)):
         " sets the birth point of the generator "
@@ -78,19 +78,19 @@ class ParticleGenerator:
         # ---------------------------------------------------------------------
         # GENERAL PARTICLES PARAMETERS
         # ---------------------------------------------------------------------
-        for t_x in self.particleXPU.Parser['XML_Values']['General_Values'].keys():
+        for t_x in self.particleXPU.Parser['XML_Values']['General_Values']:
             t_xpd[t_x] = self.particleXPU.Parser['XML_Values']['General_Values'] \
             [t_x]
         # ---------------------------------------------------------------------
         # FACTORY PARAMETERS
         # ---------------------------------------------------------------------
-        for t_x in self.particleXPU.Parser['XML_Values']['Factory_Values'].keys():
+        for t_x in self.particleXPU.Parser['XML_Values']['Factory_Values']:
             t_xpd['f'][t_x] = self.particleXPU.Parser['XML_Values']['Factory_Values'] \
             [t_x]
         # ---------------------------------------------------------------------
         # RENDERER PARAMETERS
         # ---------------------------------------------------------------------
-        for t_x in self.particleXPU.Parser['XML_Values']['Renderer_Values'].keys():
+        for t_x in self.particleXPU.Parser['XML_Values']['Renderer_Values']:
             t_xpd['r'][t_x] = self.particleXPU.Parser['XML_Values']['Renderer_Values'] \
             [t_x]
         if t_xpd['renderer'] == 'SpriteParticleRenderer':
@@ -103,13 +103,13 @@ class ParticleGenerator:
         # ---------------------------------------------------------------------
         # EMITTER PARAMETERS
         # ---------------------------------------------------------------------
-        for t_x in self.particleXPU.Parser['XML_Values']['Emitter_Values'].keys():
+        for t_x in self.particleXPU.Parser['XML_Values']['Emitter_Values']:
             t_xpd['e'][t_x] = self.particleXPU.Parser['XML_Values']['Emitter_Values'] \
             [t_x]
         # ---------------------------------------------------------------------
         # FORCE GROUP PARAMETERS
         # ---------------------------------------------------------------------
-        for t_x in self.particleXPU.Parser['XML_Values']['forceGeneral_Values'].keys():
+        for t_x in self.particleXPU.Parser['XML_Values']['forceGeneral_Values']:
             t_xpd['x'][t_x] = self.particleXPU.Parser['XML_Values'] \
             ['forceGeneral_Values'][t_x]
         # ---------------------------------------------------------------------

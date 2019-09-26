@@ -94,7 +94,7 @@ class SystemSensor:
             t_ren = t_ren.getValue()
             t_valid = {'pandagl':'OpenGL', 'pandadx8':'DirectX 8.0', \
                 'pandadx9':'DirectX 9.0'}
-            if t_ren in t_valid.keys():
+            if t_ren in t_valid:
                 # we parsed a correct engine
                 self.systemData['renderer'] = t_valid[t_ren]
             else:

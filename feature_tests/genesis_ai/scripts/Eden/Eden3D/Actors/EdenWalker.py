@@ -5,7 +5,7 @@
 # Developed by: Project Eden Development Team
 # Date: 04/07/2008
 # Place: Nairobi, Kenya
-# Copyright: (C)2008 Funtrench PLC
+# Copyright: (C)2008 Funtrench Limited
 # ---------------------------------------------
 from Eden.Eden3D.Actors.EdenActor import EdenActor
 # ---------------------------------------------
@@ -29,7 +29,7 @@ class EdenWalker(EdenActor):
             unitsForward = frameInterval * self.actorData['speed']
         else:
             # check the run variable
-            if 'run_mode' in modArgs.keys():
+            if 'run_mode' in modArgs:
                 if modArgs['run'] == True:
                     t_s = self.actorData['speed'] + self.actorData['runSpeed']
                     unitsForward = frameInterval * t_s

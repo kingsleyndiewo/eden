@@ -5,7 +5,7 @@
 # Developed by: Project Eden Development Team
 # Date: 23/08/2008
 # Place: Nairobi, Kenya
-# Copyright: (C)2008 Funtrench PLC
+# Copyright: (C)2008 Funtrench Limited
 # ---------------------------------------------
 from panda3d.core import *
 # ---------------------------------------------

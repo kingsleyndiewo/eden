@@ -5,7 +5,7 @@
 # Developed by: Project Eden Development Team
 # Date: 04/07/2008
 # Place: Nairobi, Kenya
-# Copyright: (C)2008 Funtrench PLC
+# Copyright: (C)2008 Funtrench Limited
 # ---------------------------------------------
 from direct.actor import Actor
 from panda3d.core import *
@@ -52,7 +52,7 @@ class EdenActor:
     # --------------------------ANIMATION--------------------------
     def playAnimation(self, animKey):
         " plays one iteration of an actor's animation "
-        if animKey not in self.actorData['animations'].keys():
+        if animKey not in self.actorData['animations']:
             # the specified animation does not exist
             return False
         else:
@@ -60,7 +60,7 @@ class EdenActor:
             self.baseActor.play(animKey)
     def loopAnimation(self, animKey):
         " loops an actor's animation "
-        if animKey not in self.actorData['animations'].keys():
+        if animKey not in self.actorData['animations']:
             # the specified animation does not exist
             return False
         else:
@@ -139,7 +139,7 @@ class EdenActor:
             return True
     def releaseJointControlPath(self, jointName, modelRoot = 'modelRoot' ):
         " releases a joint from control operations "
-        if jointName not in self.controllerList.keys():
+        if jointName not in self.controllerList:
             # invalid joint
             return False
         else:

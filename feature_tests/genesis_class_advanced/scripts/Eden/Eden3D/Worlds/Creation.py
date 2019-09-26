@@ -165,8 +165,8 @@ class Creation(ShowBase):
         t_ed = {'parentNode':None, 'bitMask':None, 'sphereFactor':1.0, \
             'enablePhysics':False, 'objectMass':0, 'terrainDetection':False, \
             'odeMass':None}
-        for t_z in t_ed.keys():
-            if t_z not in extraData.keys():
+        for t_z in t_ed:
+            if t_z not in extraData:
                 extraData[t_z] = t_ed[t_z]
         if extraData['parentNode'] == None:
             extraData['parentNode'] = self.staticsNode
@@ -252,7 +252,7 @@ class Creation(ShowBase):
         terraXPU.parseFile(terrainXML)
         # get terrain information
         terraXPU.getSectionValues('section','terrainDetails')
-        for t_x in terraXPU.Parser['XML_Values']['terrainDetails_Values'].keys():
+        for t_x in terraXPU.Parser['XML_Values']['terrainDetails_Values']:
             t_d[t_x] = terraXPU.Parser['XML_Values']['terrainDetails_Values'][t_x]
         # set the focal point node as required
         if terraXPU.Parser['XML_Values']['terrainDetails_Values'] \
@@ -295,7 +295,7 @@ class Creation(ShowBase):
     # ----------------------------SOUND SERVICES-----------------------------
     def setSoundVolume(self, jukeKey, newVolume):
         " sets the volume of a loaded sound "
-        if jukeKey not in self.jukeBox.keys():
+        if jukeKey not in self.jukeBox:
             # the specified sound does not exist in the jukebox
             return False
         else:
@@ -320,7 +320,7 @@ class Creation(ShowBase):
         " pan a sound; hard left is -1.0 and hard right is 1.0 "
         # of course the center is 0.0, we default it to hint to everyone
         # that changing it from 0.0 isn't really such a good idea
-        if jukeKey not in self.jukeBox.keys():
+        if jukeKey not in self.jukeBox:
             # the specified sound does not exist in the jukebox
             return False
         else:
@@ -333,7 +333,7 @@ class Creation(ShowBase):
             self.jukeBox[jukeKey].setBalance(newVolume)
     def getSoundLength(self, jukeKey):
         " returns the length of the sound in seconds "
-        if jukeKey not in self.jukeBox.keys():
+        if jukeKey not in self.jukeBox:
             # the specified sound does not exist in the jukebox
             return False
         else:
@@ -343,7 +343,7 @@ class Creation(ShowBase):
     # --------------------------OBJECT MANIPULATION--------------------------
     def hideObject(self, objectName):
         " conceals a visible object (does not destroy it) "
-        if objectName not in self.objectStore.keys():
+        if objectName not in self.objectStore:
             # the specified object does not exist in the world
             return False
         elif self.objectStore[objectName][1] == False:
@@ -355,7 +355,7 @@ class Creation(ShowBase):
             self.objectStore[objectName][1] = False
     def showObject(self, objectName):
         " reveals a hidden object "
-        if objectName not in self.objectStore.keys():
+        if objectName not in self.objectStore:
             # the specified object does not exist in the world
             return False
         elif self.objectStore[objectName][1] == True:
@@ -368,7 +368,7 @@ class Creation(ShowBase):
     def moveObject(self, objectName, newPos):
         " moves an object to a new position in the world "
         # just enriching the SDK, setPos() is adequate enough
-        if objectName not in self.objectStore.keys():
+        if objectName not in self.objectStore:
             # the specified object does not exist in the world
             return False
         else:
@@ -376,7 +376,7 @@ class Creation(ShowBase):
             self.objectStore[objectName][0].setPos(newPos[0],newPos[1],newPos[2])
     def moveGroundObject(self, objectName, newPos):
         " moves an object to a new position in the world with Z constant "
-        if objectName not in self.objectStore.keys():
+        if objectName not in self.objectStore:
             # the specified object does not exist in the world
             return False
         else:
@@ -406,7 +406,7 @@ class Creation(ShowBase):
     def loadParticlesFile(self, particleFile, pGenName, fileSource = 0, \
         fileType = 0):
         " loads a particle configuration/XML file to the named generator "
-        if pGenName not in self.pGenStore.keys():
+        if pGenName not in self.pGenStore:
             # the specified generator does not exist in the world
             return False
         else:
@@ -429,7 +429,7 @@ class Creation(ShowBase):
                     self.pGenStore[pGenName].loadDriver(particleFile)
     def setGeneratorOrigin(self, pGenName, nodePath, xyzPos):
         " sets the origin of a particle generator "
-        if pGenName not in self.pGenStore.keys():
+        if pGenName not in self.pGenStore:
             # the specified generator does not exist in the world
             return False
         else:
@@ -500,7 +500,7 @@ class Creation(ShowBase):
             pass
     def enableObjectPhysics(self, objectName, odeData = None):
         " enables physics for an object "
-        if objectName not in self.objectStore.keys():
+        if objectName not in self.objectStore:
             # the specified object does not exist in the world
             return False
         else:
@@ -548,7 +548,7 @@ class Creation(ShowBase):
             self.objectStore[objectName].append(True)
     def setObjectMass(self, objectName, newMass, odeMassData = None):
         " sets the mass on a physics-enabled object (KG) "
-        if objectName not in self.objectStore.keys():
+        if objectName not in self.objectStore:
             # the specified object does not exist in the world
             return False
         elif self.objectStore[objectName][3] == False:
@@ -837,7 +837,7 @@ class Creation(ShowBase):
             self.physicsStore['forces'][self.GFP + forceName] = (t_f, forceType)
             self.physicsStore['globalForces'].append(forceName)
             # attach it to all objects loaded for physics so far
-            for t_x in self.physicsStore['geometry'].keys():
+            for t_x in self.physicsStore['geometry']:
                 self.attachForceToObject(t_x, self.GFP + forceName)
             # send a message that we added a new global force; we'll catch it
             # in Genesis to apply this to actors. accept parameters are passed
@@ -863,7 +863,7 @@ class Creation(ShowBase):
         if self.worldData['enablePhysics'] != 1:
             # we don't have a prepared physics engine!
             return False
-        elif forceName not in self.physicsStore['forces'].keys():
+        elif forceName not in self.physicsStore['forces']:
             # the specified force does not exist
             return False
         else:
@@ -878,10 +878,10 @@ class Creation(ShowBase):
                     [forceName][0])
     def attachForceToObject(self, objectName, forceName):
         " attaches an existing force to an object "
-        if objectName not in self.objectStore.keys():
+        if objectName not in self.objectStore:
             # the specified object does not exist in the world
             return False
-        elif forceName not in self.physicsStore['forces'].keys():
+        elif forceName not in self.physicsStore['forces']:
             # the specified force does not exist
             return False
         elif self.objectStore[objectName][3] == False:
@@ -907,10 +907,10 @@ class Creation(ShowBase):
                     [forceName][0])
     def removeForceFromObject(self, objectName, forceName):
         " removes an existing force from an object "
-        if objectName not in self.objectStore.keys():
+        if objectName not in self.objectStore:
             # the specified object does not exist in the world
             return False
-        elif forceName not in self.physicsStore['forces'].keys():
+        elif forceName not in self.physicsStore['forces']:
             # the specified force does not exist
             return False
         elif self.objectStore[objectName][3] == False:
@@ -932,7 +932,7 @@ class Creation(ShowBase):
         " creates a node with a force attached to it "
         # this can be a jet engine, car engine or whatever. It is
         # not for jet packs only
-        if forceName not in self.physicsStore['forces'].keys():
+        if forceName not in self.physicsStore['forces']:
             # the specified force does not exist
             return False
         else:
@@ -954,10 +954,10 @@ class Creation(ShowBase):
     def attachJetPackToObject(self, forceName, jetPack, objectName, \
         packPos = (0,0,0), packHpr = None):
         " convenience function for attaching jetpacks to objects "
-        if objectName not in self.objectStore.keys():
+        if objectName not in self.objectStore:
             # the specified object does not exist in the world
             return False
-        elif forceName not in self.physicsStore['forces'].keys():
+        elif forceName not in self.physicsStore['forces']:
             # the specified force does not exist
             return False
         elif self.objectStore[objectName][3] == False:
@@ -991,10 +991,10 @@ class Creation(ShowBase):
                     [forceName][0])
     def removeJetPackFromObject(self, forceName, jetPackName, objectName):
         " convenience function for removing jetpacks from objects "
-        if objectName not in self.objectStore.keys():
+        if objectName not in self.objectStore:
             # the specified object does not exist in the world
             return False
-        elif forceName not in self.physicsStore['forces'].keys():
+        elif forceName not in self.physicsStore['forces']:
             # the specified force does not exist
             return False
         elif self.objectStore[objectName][3] == False:
@@ -1076,14 +1076,14 @@ class Creation(ShowBase):
         self.gameMVC = MVC_System(mvcRootDir)
         # check validity of structure
         if self.gameMVC.fullMVC == False:
-            print 'The game MVC structure is incomplete'
+            print('The game MVC structure is incomplete')
             if len(self.gameMVC.mvcStructure['Missing_Folders']) != 0:
-                print 'The components missing are:\n', \
-                self.gameMVC.mvcStructure['Missing_Folders']
+                print('The components missing are:\n', \
+                self.gameMVC.mvcStructure['Missing_Folders'])
             if len(self.gameMVC.mvcStructure['Missing_Files']) != 0:
-                print 'The vital files missing are:\n', \
-                self.gameMVC.mvcStructure['Missing_Files']
-            print 'For more information read the Eden documentation\n'
+                print('The vital files missing are:\n', \
+                self.gameMVC.mvcStructure['Missing_Files'])
+            print('For more information read the Eden documentation\n')
             # quit
             sys.exit(1)
         else:
@@ -1197,7 +1197,7 @@ class Creation(ShowBase):
         self.XPU.getSectionValues(tagID, tagValue)
         t_p = tagValue + '_Values'
         # load the visuals
-        t_u = self.XPU.Parser['XML_Values'][t_p].keys()[:]
+        t_u = list(self.XPU.Parser['XML_Values'][t_p])[:]
         t_u.sort()
         for t_j in t_u:
             t_a = t_j.split('_')
@@ -1298,13 +1298,13 @@ class Creation(ShowBase):
         # ----------------------------------------------
         if task.time == 0.0:
             # we get the initial values of the time
-            t_ist = long(time())
+            t_ist = int(time())
             t_utc = gmtime(t_ist)
             t_lcl = localtime(t_ist)
             self.clockInitTime = [t_lcl, t_utc]
         if (task.frame % self.edenVisuals.fpsValue) == 0:
             # run every second
-            t_ist = long(time())
+            t_ist = int(time())
             t_utc = gmtime(t_ist)
             t_lcl = localtime(t_ist)
             self.worldData['systemTime'] = [t_lcl, t_utc]
@@ -1341,7 +1341,7 @@ class Creation(ShowBase):
           # Step the simulation
           self.odeWorld.quickStep(self.odeStepSize)
         # set the new positions for all objects
-        for t_x in self.physicsStore['geometry'].keys():
+        for t_x in self.physicsStore['geometry']:
             self.objectStore[t_x][0].setPosQuat(render, self.physicsStore['geometry'] \
                 [t_x][0].getPosition(), Quat(self.physicsStore['geometry'][t_x] \
                 [0].getQuaternion()))
