@@ -24,7 +24,7 @@ class CheckerBoardTestAgent(CheckerBoard):
     # ------------------CONSTRUCTOR------------------------
     # ----------------------------------------------------
     def __init__(self): # constructor
-        CheckerBoard.__init__(self, ignorePicker = True) # ancestral constructor
+        CheckerBoard.__init__(self, ignorePicker = True, customPRC={'fullscreen':False}) # ancestral constructor
         t_f = [('arial.egg', 'Arial')]
         self.textPlay = Text2D(self.edenVisuals.fpsValue, t_f)
         self.hudBrush = Glass2D(self.gameMVC)

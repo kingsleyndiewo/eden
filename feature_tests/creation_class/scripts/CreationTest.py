@@ -24,7 +24,7 @@ class CreationTest(Creation):
         # the startupTask can be a custom one as in this case or
         # you can argue 'Default' to use the default task provided
         # leaving it blank means you will handle startup tasks yourself
-        Creation.__init__(self, self.starterTask) # ancestral constructor
+        Creation.__init__(self, self.starterTask, customPRC={'fullscreen':False}) # ancestral constructor
         t_f = [('arial.egg', 'Arial')]
         self.textPlay = Text2D(self.edenVisuals.fpsValue, t_f)
         # load geometry (the ViS Cube)

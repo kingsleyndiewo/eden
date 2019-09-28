@@ -24,7 +24,7 @@ class CheckersMarkIITest(CheckersMarkII):
     # ------------------CONSTRUCTOR------------------------
     # ----------------------------------------------------
     def __init__(self): # constructor
-        CheckersMarkII.__init__(self, versusAI = True) # ancestral constructor
+        CheckersMarkII.__init__(self, versusAI = True, customPRC={'fullscreen':False}) # ancestral constructor
         t_f = [('arial.egg', 'Arial')]
         self.textPlay = Text2D(self.edenVisuals.fpsValue, t_f)
         self.hudBrush = Glass2D(self.gameMVC)

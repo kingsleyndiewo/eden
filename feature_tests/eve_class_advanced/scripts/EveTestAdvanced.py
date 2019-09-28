@@ -22,7 +22,7 @@ class EveTestAdvanced(Eve):
     # ------------------CONSTRUCTOR------------------------
     # ----------------------------------------------------
     def __init__(self): # constructor
-        Eve.__init__(self, self.starterTask) # ancestral constructor
+        Eve.__init__(self, self.starterTask, customPRC={'fullscreen':False}) # ancestral constructor
         self.videoDone = False
         self.eventListPos = 0.40
         t_f = [('arial.egg', 'Arial')]
@@ -121,8 +121,7 @@ class EveTestAdvanced(Eve):
             self.objectStore['cube'][0].setZ(self.objectStore['cube'][0].getZ() + valueChange)
     def pickTool(self):
         " cycles through Miranda's inventory "
-        self.selectInventoryItem('Miranda', self.toolBoxLists['Miranda'] \
-            [self.cycleCount])
+        self.selectInventoryItem('Miranda', self.toolBoxLists['Miranda'][self.cycleCount])
         self.cycleCount += 1
         if self.cycleCount == len(self.toolBoxLists['Miranda']):
             # reset

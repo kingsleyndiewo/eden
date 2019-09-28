@@ -23,7 +23,7 @@ class AdamTest(Adam):
     # ------------------CONSTRUCTOR------------------------
     # ----------------------------------------------------
     def __init__(self): # constructor
-        Adam.__init__(self, self.starterTask) # ancestral constructor
+        Adam.__init__(self, self.starterTask, customPRC={'fullscreen':False}) # ancestral constructor
         self.videoDone = False
         self.eventListPos = 0.40
         t_f = [('arial.egg', 'Arial')]

@@ -23,7 +23,7 @@ class GenesisTestAdvanced(Genesis):
     # ------------------CONSTRUCTOR------------------------
     # ----------------------------------------------------
     def __init__(self): # constructor
-        Genesis.__init__(self, self.starterTask) # ancestral constructor
+        Genesis.__init__(self, self.starterTask, customPRC={'fullscreen':False}) # ancestral constructor
         t_f = [('arial.egg', 'Arial')]
         self.textPlay = Text2D(self.edenVisuals.fpsValue, t_f)
         # load Eve, and loop her animation. We will demonstrate an
