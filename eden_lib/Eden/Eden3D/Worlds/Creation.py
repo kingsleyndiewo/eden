@@ -223,7 +223,13 @@ class Creation(ShowBase):
         self.objectStore[modelName][0].setScale(scale[0], scale[1], scale[2])
         self.objectStore[modelName][0].setPos(xyzPos[0], xyzPos[1], xyzPos[2])
         # we append useful collision information as 3rd element
-        t_b = self.objectStore[modelName][0].getChild(0).getBounds()
+        t_n = self.objectStore[modelName][0]
+        t_b = t_n.getBounds()
+        for t_i in range(t_n.getNumChildren()):
+            t_cb = t_n.getChild(t_i).getBounds()
+            if t_cb.isEmpty() == False:
+                t_b = t_cb
+                break
         t_r = t_b.getRadius()
         t_c = t_b.getCenter()
         t_k = t_r * extraData["sphereFactor"]

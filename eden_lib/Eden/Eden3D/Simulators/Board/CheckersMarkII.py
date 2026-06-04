@@ -10,6 +10,7 @@
 from Eden.Eden3D.Simulators.Board.CheckerBoard import CheckerBoard
 from random import randint
 
+
 # ---------------------------------------------
 # A class that implements a basic world with a
 # checkerboard in it. Entry point for a board game.
@@ -18,6 +19,7 @@ from random import randint
 # ---------------------------------------------
 class CheckersMarkII(CheckerBoard):
     "Extends CheckerBoard for advanced AI agents"
+
     # ------------------CONSTRUCTOR------------------------
     # ----------------------------------------------------
     def __init__(
@@ -105,6 +107,8 @@ class CheckersMarkII(CheckerBoard):
 
     def smartRandomAgent(self, validPieces, captureMoves=False):
         "effects a random move but escapes danger"
+        validPieces = list(validPieces)
+        t_h = []
         if captureMoves == False:
             # check if piece is in danger
             t_pm = []
@@ -117,41 +121,39 @@ class CheckersMarkII(CheckerBoard):
                 # we must move a priority move
                 validPieces = t_pm
             # check for hazardous tiles
-            t_hz = []
             for t_x in validPieces:
-                t_hz.append(self.checkTileHazard(t_x))
+                t_h.append((t_x, self.checkTileHazard(t_x)))
         t_lc = len(validPieces)
         # randomize the piece to move
         if t_lc == 1:
             t_a = validPieces[0]
-            t_r = 0
+            t_hz = t_h[0][1] if captureMoves != True else []
         else:
             if captureMoves == True:
                 t_a = validPieces[randint(0, t_lc - 1)]
             else:
                 # check that we don't have danger tiles only
                 t_f = False
-                # store the list because we're deleting stuff
-                t_bvp = validPieces
+                t_hc = list(t_h)
                 while t_f == False:
-                    t_r = randint(0, t_lc - 1)
-                    t_a = validPieces[t_r]
+                    t_r = randint(0, len(t_hc) - 1)
+                    t_a, t_hz = t_hc[t_r]
                     t_dhc = self.parseHardCodes(self.sideTurn, t_a)
-                    if len(t_dhc) > len(t_hz[t_r]):
+                    if len(t_dhc) > len(t_hz):
                         # at least 1 safe move exists for this piece
                         t_f = True
-                    elif len(validPieces) == 1:
+                    elif len(t_hc) == 1:
                         # we have removed up to only one piece
                         # last man standing is what we use to
                         # avoid deleting everything
                         t_f = True
                     else:
                         # remove the piece
-                        validPieces.remove(t_a)
-        t_d = self.parseHardCodes(self.sideTurn, t_a, captureMoves)
+                        del t_hc[t_r]
+        t_d = list(self.parseHardCodes(self.sideTurn, t_a, captureMoves))
         if captureMoves != True:
             # delete unwanted moves
-            if len(t_hz[t_r]) != 0 and len(t_d) > len(t_hz[t_r]):
-                for t_xv in t_hz[t_r]:
+            if len(t_hz) != 0 and len(t_d) > len(t_hz):
+                for t_xv in t_hz:
                     t_d.remove(t_xv)
         self.randomAgentUtility(t_d, t_a, captureMoves)

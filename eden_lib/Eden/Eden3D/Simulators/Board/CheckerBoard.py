@@ -616,21 +616,20 @@ class CheckerBoard(Board_8x8):
 
     def randomAgentUtility(self, agentHardCodes, pieceChoice, captureMoves):
         "common code for the random agents"
-        # the location to move the selected piece to
-        # randomize the location to move to
-        t_ld = len(agentHardCodes)
-        t_f = False
-        if t_ld == 1:
-            t_e = agentHardCodes[0]
-        else:
-            t_e = agentHardCodes[randint(0, t_ld - 1)]
-        while t_f == False:
+        t_hc = list(agentHardCodes)
+        while len(t_hc) != 0:
+            if len(t_hc) == 1:
+                t_e = t_hc.pop(0)
+            else:
+                t_e = t_hc.pop(randint(0, len(t_hc) - 1))
             if captureMoves == True:
                 t_f = self.effectMove(self.sideTurn, pieceChoice, t_e[0])
             else:
                 t_f = self.effectMove(self.sideTurn, pieceChoice, t_e)
-            # randomize again
-            t_e = agentHardCodes[randint(0, t_ld - 1)]
+            if t_f == True:
+                return True
+        self.systemMessage("AI failed to execute move!", [self.sideTurn, pieceChoice])
+        return False
 
     # ------------------BOARD SETUP------------------
     def setupPieces(self):
