@@ -5,7 +5,7 @@
 # Developed by: Project Eden Development Team
 # Date: 08/05/2009
 # Place: Nairobi, Kenya
-# Copyright: (C)2009 Funtrench Limited
+# Copyright: (C)2026 Nordkisel AB
 # ---------------------------------------------
 from xml.dom.minidom import Document, Node
 

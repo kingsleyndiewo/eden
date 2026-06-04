@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Copyright ©2012 Intellect Alliance. -->
+<!-- Copyright ©2026 Intellect Alliance. -->
 <!-- Essential configuration for the Eve Class -->
 <configuration>
     <!-- The values under each section should be in the format
@@ -18,7 +18,7 @@
         <value valueName="Title">The Nairobi Project Simulation</value>
         <value valueName="Author">Nairobi Project Development Team</value>
         <value valueName="Company">Intellect Alliance</value>
-        <value valueName="Legal Copyright">(C)2012 Intellect Alliance</value>
+        <value valueName="Legal Copyright">(C)2026 Intellect Alliance</value>
         <value valueName="Genre">Eden3D World Client</value>
         <value valueName="Music">Enter the Cave - Arpy Rules</value>
         <value valueName="displayOrder">Title,Author,Company,Legal Copyright,Genre,Music</value>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Copyright ©2009 Funtrench Limited. -->
+<!-- Copyright ©2026 Nordkisel AB. -->
 <!-- Moves XML for the basic checkers AI engine -->
 <moves>
     <!-- The values under each section should be in the format
@@ -12,7 +12,7 @@
         <value valueName="Title">Basic Moves List 1</value>
         <value valueName="Author">Kingsley Ndiewo</value>
         <value valueName="Company">FunTrench Technologies PLC</value>
-        <value valueName="Legal Copyright">(C)2009 Funtrench Limited</value>
+        <value valueName="Legal Copyright">(C)2026 Nordkisel AB</value>
         <value valueName="Level">Random</value>
     </section>
     <section Name="Moves">

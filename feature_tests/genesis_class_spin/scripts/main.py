@@ -3,7 +3,7 @@
 # Date: 28/05/2009
 # Place: Nairobi, Kenya
 # |------------------------------------------------|
-# | (C)2009 Funtrench Limited.            |
+# | (C)2026 Nordkisel AB.            |
 # |------------------------------------------------|
 from GenesisTestSpin import GenesisTestSpin
 

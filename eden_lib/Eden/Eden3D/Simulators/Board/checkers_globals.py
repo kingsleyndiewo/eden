@@ -6,7 +6,7 @@
 # Developed by: Project Eden Development Team
 # Date: 16/05/2009
 # Place: Nairobi, Kenya
-# Copyright: (C)2008 Funtrench Limited
+# Copyright: (C)2026 Nordkisel AB
 # ---------------------------------------------
 # AI knowledge-base file
 #   +---+---+---+---+---+---+---+---+

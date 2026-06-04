@@ -5,15 +5,17 @@
 # Developed by: Project Eden Development Team
 # Date: 28/05/2008
 # Place: Nairobi, Kenya
-# Copyright: (C)2008 Funtrench Limited
+# Copyright: (C)2026 Nordkisel AB
 # ---------------------------------------------
 from xml.dom import minidom
+
 
 # ---------------------------------------------
 # Class definition for the XParser class
 # ---------------------------------------------
 class XParser:
     "Base class for all XML parsers"
+
     # ------------------CONSTRUCTOR------------------------
     # ----------------------------------------------------
     def __init__(self):  # constructor
@@ -33,7 +35,7 @@ class XParser:
     def parseFile(self, fileName):
         "parses an XML file into a file-like object"
         # load the xml file and parse
-        self.Parser["XML_Content"] = minidom.parse(fileName)
+        self.Parser["XML_Content"] = minidom.parse(str(fileName))
         self.LoadedFlag = True
 
     # ------------------------NOTES-------------------------------

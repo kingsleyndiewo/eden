@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Copyright ©2009 Funtrench Limited. -->
+<!-- Copyright ©2026 Nordkisel AB. -->
 <!-- Essential configuration for the Eve Class -->
 <configuration>
     <!-- The values under each section should be in the format
@@ -17,8 +17,8 @@
              and author here -->
         <value valueName="Title">Eve Sample Client</value>
         <value valueName="Author">Project Eden Development Team</value>
-        <value valueName="Company">Funtrench Limited</value>
-        <value valueName="Legal Copyright">(C)2009 Funtrench Limited</value>
+        <value valueName="Company">Nordkisel AB</value>
+        <value valueName="Legal Copyright">(C)2026 Nordkisel AB</value>
         <value valueName="Genre">Eden3D World Client</value>
         <value valueName="Music">Enter the Cave - Black Skills</value>
         <value valueName="displayOrder">Title,Author,Company,Legal Copyright,Genre,Music</value>

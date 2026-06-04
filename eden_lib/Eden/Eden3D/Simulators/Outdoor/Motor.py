@@ -5,9 +5,10 @@
 # Developed by: Project Eden Development Team
 # Date: 30/07/2008
 # Place: Nairobi, Kenya
-# Copyright: (C)2008 Funtrench Limited
+# Copyright: (C)2026 Nordkisel AB
 # ---------------------------------------------
 from Eden.Eden3D.Worlds.Eve import Eve
+
 
 # ---------------------------------------------
 # A class that implements a basic race car
@@ -18,12 +19,26 @@ from Eden.Eden3D.Worlds.Eve import Eve
 # ---------------------------------------------
 class Motor(Eve):
     "Extends Eve class for race car simulators"
+
     # ------------------CONSTRUCTOR------------------------
     # ----------------------------------------------------
-    def __init__(self, remoteStarterTask=None, customPRC=None, edenClass="Motor"):
+    def __init__(
+        self,
+        remoteStarterTask=None,
+        customPRC=None,
+        edenClass="Motor",
+        mvcRootDir=None,
+        configXML=None,
+    ):
         # we want Eve's features without the picker system
         Eve.__init__(
-            self, remoteStarterTask, True, customPRC, edenClass
+            self,
+            remoteStarterTask,
+            True,
+            customPRC,
+            edenClass,
+            mvcRootDir,
+            configXML,
         )  # ancestral constructor
 
     # ------------------PUBLIC BEHAVIOURS-----------------

@@ -3,7 +3,7 @@
 # Date: 11/08/2008
 # Place: Nairobi, Kenya
 # |------------------------------------------------|
-# | (C)2009 Funtrench Limited.            |
+# | (C)2026 Nordkisel AB.            |
 # |------------------------------------------------|
 from EveTestParticles import EveTestParticles
 

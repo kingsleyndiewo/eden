@@ -6,7 +6,7 @@
 # Date: 29/07/2008
 # Place: Nairobi, Kenya
 # |------------------------------------------------|
-# | (C)2018 Funtrench Limited.            |
+# | (C)2026 Nordkisel AB.            |
 # |------------------------------------------------|
 import sys
 from pathlib import Path

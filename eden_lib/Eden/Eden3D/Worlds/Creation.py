@@ -5,7 +5,7 @@
 # Developed by: Project Eden Development Team
 # Date: 30/06/2008
 # Place: Nairobi, Kenya
-# Copyright: (C)2008 Funtrench Limited
+# Copyright: (C)2026 Nordkisel AB
 # ---------------------------------------------
 from direct.showbase.ShowBase import ShowBase
 from Eden.Eden2D.Visuals2D import Visuals2D
@@ -32,7 +32,14 @@ class Creation(ShowBase):
 
     # ------------------CONSTRUCTOR------------------------
     # ----------------------------------------------------
-    def __init__(self, remoteStarterTask=None, customPRC=None, edenClass="Creation"):
+    def __init__(
+        self,
+        remoteStarterTask=None,
+        customPRC=None,
+        edenClass="Creation",
+        mvcRootDir=None,
+        configXML=None,
+    ):
         # initialize the data dictionary
         # the edenClass variable is used to set the Eden super-class
         # used by the game. The descendant sets it when calling the
@@ -57,9 +64,12 @@ class Creation(ShowBase):
         # -----------------------------------------------------
         ShowBase.__init__(self)
         # -----------------------------------------------------
-        # check MVC structure (we must be in the scripts directory!)
+        # resolve startup paths for the project root and config file
+        resolvedMVCRoot, resolvedConfigXML = self.resolveStartupPaths(
+            mvcRootDir=mvcRootDir, configXML=configXML
+        )
         # self.worldData will contain the MVC data
-        self.checkMVC(self.resolveMVCRoot())
+        self.checkMVC(resolvedMVCRoot, resolvedConfigXML)
         # at this point we have a valid MVC structure
         # create a new node path just under render for geometry
         self.geometryNode = render.attachNewNode("Geometry")
@@ -1240,10 +1250,46 @@ class Creation(ShowBase):
                 return str(mvcRoot)
         return defaultRoot
 
-    def checkMVC(self, mvcRootDir):
+    @staticmethod
+    def resolveStartupPaths(
+        defaultRoot="../", mvcRootDir=None, configXML=None, mainFile=None
+    ):
+        "resolves project root and config paths for explicit or inferred startup"
+        if mvcRootDir is None:
+            resolvedMVCRoot = Creation.resolveMVCRoot(defaultRoot, mainFile)
+        else:
+            resolvedMVCRoot = str(Path(mvcRootDir).expanduser().resolve())
+
+        if configXML is None:
+            resolvedConfigXML = str(
+                (Path(resolvedMVCRoot) / "config" / "config.xml").resolve()
+            )
+        else:
+            configPath = Path(configXML).expanduser()
+            if not configPath.is_absolute():
+                if configPath.parent == Path("."):
+                    configPath = Path(resolvedMVCRoot) / "config" / configPath
+                else:
+                    configPath = Path(resolvedMVCRoot) / configPath
+            resolvedConfigXML = str(configPath.resolve())
+
+        return resolvedMVCRoot, resolvedConfigXML
+
+    def checkMVC(self, mvcRootDir, configXML=None):
         "checks validity of the MVC root"
         # create the MVC instance for Creation
         self.gameMVC = MVC_System(mvcRootDir)
+        if configXML is not None:
+            resolvedConfigXML = str(Path(configXML).expanduser().resolve())
+            if Path(resolvedConfigXML).is_file():
+                self.gameMVC.mvcStructure["config.xml"] = resolvedConfigXML
+                if "config.xml" in self.gameMVC.mvcStructure["Missing_Files"]:
+                    self.gameMVC.mvcStructure["Missing_Files"].remove("config.xml")
+                if (
+                    len(self.gameMVC.mvcStructure["Missing_Folders"]) == 0
+                    and len(self.gameMVC.mvcStructure["Missing_Files"]) == 0
+                ):
+                    self.gameMVC.fullMVC = True
         # check validity of structure
         if self.gameMVC.fullMVC == False:
             print("The game MVC structure is incomplete")

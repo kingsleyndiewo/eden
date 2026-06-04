@@ -5,11 +5,12 @@
 # Developed by: Project Eden Development Team
 # Date: 04/07/2008
 # Place: Nairobi, Kenya
-# Copyright: (C)2008 Funtrench Limited
+# Copyright: (C)2026 Nordkisel AB
 # ---------------------------------------------
 from Eden.Eden3D.Worlds.Creation import *
 from Eden.Eden3D.Actors.EdenWalker import EdenWalker
 from Eden.Eden3D.Actors.EdenAero import EdenAero
+
 
 # ---------------------------------------------
 # A class that implements a basic world with options
@@ -20,11 +21,24 @@ from Eden.Eden3D.Actors.EdenAero import EdenAero
 # ---------------------------------------------
 class Genesis(Creation):
     "Extends Creation class for practical 3D worlds"
+
     # ------------------CONSTRUCTOR------------------------
     # ----------------------------------------------------
-    def __init__(self, remoteStarterTask=None, customPRC=None, edenClass="Genesis"):
+    def __init__(
+        self,
+        remoteStarterTask=None,
+        customPRC=None,
+        edenClass="Genesis",
+        mvcRootDir=None,
+        configXML=None,
+    ):
         Creation.__init__(
-            self, remoteStarterTask, customPRC, edenClass
+            self,
+            remoteStarterTask,
+            customPRC,
+            edenClass,
+            mvcRootDir,
+            configXML,
         )  # ancestral constructor
         # set the bitMask for the geometry
         self.geomBitMask = self.XPU.Parser["XML_Values"]["WorldDetails_Values"][

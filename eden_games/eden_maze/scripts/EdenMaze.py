@@ -6,7 +6,7 @@
 # Date: 06/08/2008
 # Place: Nairobi, Kenya
 # |------------------------------------------------|
-# | (C)2009 Funtrench PLC. www.funtrench.com       |
+# | (C)2026 Funtrench PLC. www.funtrench.com       |
 # |------------------------------------------------|
 import sys
 from pathlib import Path

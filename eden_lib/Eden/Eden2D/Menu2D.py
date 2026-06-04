@@ -5,7 +5,7 @@
 # Developed by: Project Eden Development Team
 # Date: 08/08/2008
 # Place: Nairobi, Kenya
-# Copyright: (C)2008 Funtrench Limited
+# Copyright: (C)2026 Nordkisel AB
 # ---------------------------------------------
 from direct.gui.DirectGui import *
 from direct.gui import DirectGuiGlobals

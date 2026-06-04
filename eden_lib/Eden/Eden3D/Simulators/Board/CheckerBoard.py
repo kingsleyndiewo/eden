@@ -5,11 +5,12 @@
 # Developed by: Project Eden Development Team
 # Date: 21/08/2008
 # Place: Nairobi, Kenya
-# Copyright: (C)2008 Funtrench Limited
+# Copyright: (C)2026 Nordkisel AB
 # ---------------------------------------------
 from Eden.Eden3D.Simulators.Board.Board_8x8 import Board_8x8
 from Eden.Eden3D.Simulators.Board.checkers_globals import *
 from random import randint
+
 
 # ---------------------------------------------
 # A class that implements a basic world with a
@@ -19,6 +20,7 @@ from random import randint
 # ---------------------------------------------
 class CheckerBoard(Board_8x8):
     "Extends Board_8x8 for checkers game boards"
+
     # ------------------CONSTRUCTOR------------------------
     # ----------------------------------------------------
     def __init__(
@@ -28,10 +30,19 @@ class CheckerBoard(Board_8x8):
         versusAI=False,
         customPRC=None,
         edenClass="CheckerBoard",
+        mvcRootDir=None,
+        configXML=None,
     ):
         # ancestral constructor
         Board_8x8.__init__(
-            self, remoteStarterTask, ignorePicker, versusAI, customPRC, edenClass
+            self,
+            remoteStarterTask,
+            ignorePicker,
+            versusAI,
+            customPRC,
+            edenClass,
+            mvcRootDir,
+            configXML,
         )
         # compute valid positions on board
         self.initTiles()

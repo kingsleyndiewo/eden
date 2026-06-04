@@ -6,7 +6,7 @@
 # Date: 10/11/2012
 # Place: Nairobi, Kenya
 # |------------------------------------------------|
-# | (C)2012 Intellect Alliance.            |
+# | (C)2026 Intellect Alliance.            |
 # |------------------------------------------------|
 import sys
 from pathlib import Path

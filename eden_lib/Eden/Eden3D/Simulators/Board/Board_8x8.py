@@ -5,7 +5,7 @@
 # Developed by: Project Eden Development Team
 # Date: 22/05/2009
 # Place: Nairobi, Kenya
-# Copyright: (C)2008 Funtrench Limited
+# Copyright: (C)2026 Nordkisel AB
 # ---------------------------------------------
 from Eden.Eden3D.Worlds.Creation import *
 from Eden.EdenTools.XMLParsers.ConfigParser import ConfigParser
@@ -31,11 +31,18 @@ class Board_8x8(Creation):
         versusAI=False,
         customPRC=None,
         edenClass="8x8_Board",
+        mvcRootDir=None,
+        configXML=None,
     ):
         if remoteStarterTask == None:
             remoteStarterTask = self.starterTask
         Creation.__init__(
-            self, remoteStarterTask, customPRC, edenClass
+            self,
+            remoteStarterTask,
+            customPRC,
+            edenClass,
+            mvcRootDir,
+            configXML,
         )  # ancestral constructor
         # set the bitMask for the geometry
         self.geomBitMask = self.XPU.Parser["XML_Values"]["WorldDetails_Values"][
@@ -293,7 +300,7 @@ class Board_8x8(Creation):
         # create base
         t_hdr = "%s session saved replay file" % [self.worldData["edenClass"]]
         movesXGU.createBase(
-            "moves", True, ["Copyright (C)2008 Funtrench Technologies PLC.", t_hdr]
+            "moves", True, ["Copyright (C)2026 Funtrench Technologies PLC.", t_hdr]
         )
         # create the About section
         movesXGU.createSection("section", "Name", "Description")

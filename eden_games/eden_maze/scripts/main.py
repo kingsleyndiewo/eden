@@ -3,7 +3,7 @@
 # Date: 29/07/2008
 # Place: Nairobi, Kenya
 # |------------------------------------------------|
-# | (C)2008 Funtrench PLC.            |
+# | (C)2026 Funtrench PLC.            |
 # |------------------------------------------------|
 from EdenMaze import EdenMaze
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Copyright ©2009 Funtrench PLC. -->
+<!-- Copyright ©2026 Funtrench PLC. -->
 <!-- Configuration for the EdenMaze Class -->
 <configuration>
     <!-- The values under each section should be in the format
@@ -17,7 +17,7 @@
         <value valueName="Title">EdenMaze</value>
         <value valueName="Author">Lenin Oyuga and Antony Onim</value>
         <value valueName="Company">Funtrench PLC</value>
-        <value valueName="Legal Copyright">(C)2009 Funtrench PLC</value>
+        <value valueName="Legal Copyright">(C)2026 Funtrench PLC</value>
         <value valueName="Genre">3D Puzzle</value>
         <value valueName="displayOrder">Title,Author,Company,Legal Copyright,Genre</value>
     </section>

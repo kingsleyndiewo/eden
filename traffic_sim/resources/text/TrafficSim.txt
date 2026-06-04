@@ -16,5 +16,5 @@ Theorems Demonstrated:
 Additional Notes:
 
     - The simulation is done using the Eden 3D development framework, a 3D
-    development framework created by Funtrench Limited, a member of the
+    development framework created by Nordkisel AB, a member of the
     Intellect Alliance.

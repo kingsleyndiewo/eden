@@ -5,7 +5,7 @@
 # Developed by: Project Eden Development Team
 # Date: 15/08/2008
 # Place: Nairobi, Kenya
-# Copyright: (C)2008 Funtrench Limited
+# Copyright: (C)2026 Nordkisel AB
 # ---------------------------------------------
 from Eden.Eden2D.Menu2D import Menu2D
 

@@ -5,7 +5,7 @@
 # Developed by: Project Eden Development Team
 # Date: 16/06/2008
 # Place: Nairobi, Kenya
-# Copyright: (C)2008 Funtrench Limited
+# Copyright: (C)2026 Nordkisel AB
 # ---------------------------------------------
 # module defines
 NO_EXIST = "Not Found"

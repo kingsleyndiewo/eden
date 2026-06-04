@@ -5,10 +5,11 @@
 # Developed by: Project Eden Development Team
 # Date: 29/07/2008
 # Place: Nairobi, Kenya
-# Copyright: (C)2008 Funtrench Limited
+# Copyright: (C)2026 Nordkisel AB
 # ---------------------------------------------
 from Eden.Eden3D.Worlds.Genesis import Genesis
 from Eden.EdenTools.Pickers.ActorPicker import ActorPicker
+
 
 # ---------------------------------------------
 # A class that implements a basic world with one
@@ -19,6 +20,7 @@ from Eden.EdenTools.Pickers.ActorPicker import ActorPicker
 # ---------------------------------------------
 class Eve(Genesis):
     "Extends Genesis class for actor-centred 3D worlds"
+
     # ------------------CONSTRUCTOR------------------------
     # ----------------------------------------------------
     def __init__(
@@ -27,9 +29,16 @@ class Eve(Genesis):
         ignorePicker=False,
         customPRC=None,
         edenClass="Eve",
+        mvcRootDir=None,
+        configXML=None,
     ):
         Genesis.__init__(
-            self, remoteStarterTask, customPRC, edenClass
+            self,
+            remoteStarterTask,
+            customPRC,
+            edenClass,
+            mvcRootDir,
+            configXML,
         )  # ancestral constructor
         # get activatable actors list
         self.XPU.getSectionValues("subsection", "Actors")
