@@ -17,6 +17,7 @@ from Eden.Eden3D.Terrain.GeoMipMapper import GeoMipMapper
 from panda3d.core import *
 import sys
 import math
+from pathlib import Path
 from time import gmtime, localtime, strftime, time
 
 
@@ -58,7 +59,7 @@ class Creation(ShowBase):
         # -----------------------------------------------------
         # check MVC structure (we must be in the scripts directory!)
         # self.worldData will contain the MVC data
-        self.checkMVC("../")
+        self.checkMVC(self.resolveMVCRoot())
         # at this point we have a valid MVC structure
         # create a new node path just under render for geometry
         self.geometryNode = render.attachNewNode("Geometry")
@@ -1223,6 +1224,22 @@ class Creation(ShowBase):
 
     # ------------------SYSTEM SERVICES-----------------
     # ----------------------------------------------------
+    @staticmethod
+    def resolveMVCRoot(defaultRoot="../", mainFile=None):
+        "resolves the MVC root relative to the launched script when possible"
+        if mainFile is None:
+            mainModule = sys.modules.get("__main__")
+            mainFile = getattr(mainModule, "__file__", None)
+        if mainFile is not None:
+            scriptDir = Path(mainFile).resolve().parent
+            mvcRoot = scriptDir.parent
+            if all(
+                (mvcRoot / t_name).exists()
+                for t_name in ("config", "resources", "scripts")
+            ):
+                return str(mvcRoot)
+        return defaultRoot
+
     def checkMVC(self, mvcRootDir):
         "checks validity of the MVC root"
         # create the MVC instance for Creation

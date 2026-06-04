@@ -12,10 +12,12 @@ from platform import *
 from panda3d.core import ConfigVariableString, ConfigVariableBool
 from panda3d.core import getModelPath, Filename
 
+
 # ---------------------------------------------
 # Class definition for the SystemSensor class
 class SystemSensor:
     "Base class for all system information parsers"
+
     # ------------------CONSTRUCTOR------------------------
     # ----------------------------------------------------
     def __init__(self, skipPrc=False, customData=None):  # constructor
@@ -68,18 +70,22 @@ class SystemSensor:
             # ---------------------------FUNTRENCH EDEN PRC DEFAULTS---
             # These were put here so that we don't have to set them in the
             # prc file
-            if customData == None:
-                # set default values
-                customData = {
-                    "win-origin": "-1 -1",
-                    "window-title": "Eden 3D System",
-                    "fullscreen": True,
-                    "audio-library-name": "p3openal_audio",
-                    "extraPaths": [],
-                    "load-display": prefDisplay,
-                }
-                # extra paths
-                customData["extraPaths"].append(edenRoot + "/Eden2D/fontLib")
+            defaultData = {
+                "win-origin": "-1 -1",
+                "window-title": "Eden 3D System",
+                "fullscreen": True,
+                "audio-library-name": "p3openal_audio",
+                "extraPaths": [edenRoot + "/Eden2D/fontLib"],
+                "load-display": prefDisplay,
+            }
+            if customData is None:
+                customData = defaultData
+            else:
+                mergedData = defaultData.copy()
+                mergedData.update(customData)
+                if "extraPaths" in customData:
+                    mergedData["extraPaths"] = list(customData["extraPaths"])
+                customData = mergedData
             t_wo = ConfigVariableString("win-origin", customData["win-origin"])
             t_wt = ConfigVariableString("window-title", customData["window-title"])
             t_fs = ConfigVariableBool("fullscreen", customData["fullscreen"])
@@ -88,16 +94,16 @@ class SystemSensor:
             )
             t_dd = ConfigVariableString("load-display", customData["load-display"])
             # set the values if different
-            if t_wo.getValue() != "-1 -1":
-                t_wo.setValue("-1 -1")
-            if t_wt.getValue() != "Eden 3D System":
-                t_wt.setValue("Eden 3D System")
-            if t_fs.getValue() != True:
-                t_fs.setValue(True)
-            if t_al.getValue() != "p3openal_audio":
-                t_al.setValue("p3openal_audio")
-            if t_dd.getValue() == "":
-                t_dd.setValue(prefDisplay)
+            if t_wo.getValue() != customData["win-origin"]:
+                t_wo.setValue(customData["win-origin"])
+            if t_wt.getValue() != customData["window-title"]:
+                t_wt.setValue(customData["window-title"])
+            if t_fs.getValue() != customData["fullscreen"]:
+                t_fs.setValue(customData["fullscreen"])
+            if t_al.getValue() != customData["audio-library-name"]:
+                t_al.setValue(customData["audio-library-name"])
+            if t_dd.getValue() != customData["load-display"]:
+                t_dd.setValue(customData["load-display"])
             # add extra paths to the model path
             t_fpt = getModelPath()
             for t_y in customData["extraPaths"]:

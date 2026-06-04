@@ -8,6 +8,16 @@
 # |------------------------------------------------|
 # | (C)2009 Funtrench PLC. www.funtrench.com       |
 # |------------------------------------------------|
+import sys
+from pathlib import Path
+
+for parent in Path(__file__).resolve().parents:
+    eden_lib = parent / "eden_lib"
+    if (eden_lib / "Eden").is_dir():
+        if str(eden_lib) not in sys.path:
+            sys.path.insert(0, str(eden_lib))
+        break
+
 from Eden.Eden3D.Worlds.Adam import Adam
 from Eden.Eden2D.Text2D import Text2D
 from Eden.Eden2D.Menu2D import Menu2D

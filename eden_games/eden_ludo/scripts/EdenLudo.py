@@ -8,6 +8,16 @@
 # |------------------------------------------------|
 # | (C)2009 Funtrench PLC. www.funtrench.com       |
 # |------------------------------------------------|
+import sys
+from pathlib import Path
+
+for parent in Path(__file__).resolve().parents:
+    eden_lib = parent / "eden_lib"
+    if (eden_lib / "Eden").is_dir():
+        if str(eden_lib) not in sys.path:
+            sys.path.insert(0, str(eden_lib))
+        break
+
 from Eden.Eden3D.Worlds.Creation import *
 from Eden.Eden2D.Text2D import Text2D
 from Eden.Eden2D.Menu2D import Menu2D
@@ -19,12 +29,14 @@ from random import randint
 from ludo_globals import *
 import sys
 
+
 # --------------------------------------------------
 # A class to implement the board game
 # Class definition for the EdenLudo class
 # --------------------------------------------------
 class EdenLudo(Creation):
     "Class to implement the ludo board"
+
     # ------------------CONSTRUCTOR------------------------
     # ----------------------------------------------------
     def __init__(self):  # constructor
@@ -345,11 +357,8 @@ class EdenLudo(Creation):
                         else:
                             pass
                     if t_j == 4:
-                        t_n = (
-                            "CONGRATULATIONS %s player all pieces are at \
-                             home %s's turn"
-                            % (self.prevPlayer, self.activePlayer)
-                        )
+                        t_n = "CONGRATULATIONS %s player all pieces are at \
+                             home %s's turn" % (self.prevPlayer, self.activePlayer)
                         self.printHud("Turn", t_n)
                 elif t_r == 57:
                     t_s = "cTiles"
@@ -420,11 +429,8 @@ class EdenLudo(Creation):
                         else:
                             pass
                     if t_j == 4:
-                        t_n = (
-                            "CONGRATULATIONS %s player all pieces are at \
-                             home %s's turn"
-                            % (self.prevPlayer, self.activePlayer)
-                        )
+                        t_n = "CONGRATULATIONS %s player all pieces are at \
+                             home %s's turn" % (self.prevPlayer, self.activePlayer)
                         self.printHud("Turn", t_n)
                 elif t_r == 57:
                     t_s = "cTiles"

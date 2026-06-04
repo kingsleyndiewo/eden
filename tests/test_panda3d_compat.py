@@ -12,6 +12,7 @@ if str(EDEN_LIB) not in sys.path:
 from Eden.Eden3D.Actors.EdenActor import EdenActor
 from Eden.Eden3D.Simulators.Board.Board_8x8 import Board_8x8
 from Eden.Eden3D.Worlds.Creation import Creation
+from Eden.EdenTools.Systemic.SystemSensor import SystemSensor
 
 
 class DummyBaseActor:
@@ -96,6 +97,11 @@ class Panda3DCompatibilityTests(unittest.TestCase):
         Board_8x8.eventProcessor(board, "missing")
 
         self.assertEqual(sound.play_count, 0)
+
+    def test_system_sensor_accepts_partial_custom_prc(self):
+        sensor = SystemSensor(customData={"fullscreen": False})
+
+        self.assertEqual(sensor.systemData["screenResolution"], (800.0, 600.0))
 
 
 if __name__ == "__main__":

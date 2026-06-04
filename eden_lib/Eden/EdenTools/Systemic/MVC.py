@@ -13,10 +13,12 @@ import os
 from .mvc_globals import *
 from panda3d.core import getModelPath
 
+
 # ---------------------------------------------
 # Class definition for the MVC_System class
 class MVC_System:
     "Base class for all MVC traversers"
+
     # ------------------CONSTRUCTOR------------------------
     # ----------------------------------------------------
     def __init__(self, rootDir):  # constructor
@@ -76,46 +78,40 @@ class MVC_System:
                 self.mvcStructure[t_x] = abspath(t_s)
                 if t_x == "resources":
                     # build paths for convenience
-                    # we will save all paths relative to 'scripts'
+                    # save absolute paths so loading does not depend on cwd
                     for t_p in self.mvcStructure["MVC_ResourceTier"]:
                         t_h = mvcRootDir + "/" + t_x + "/" + t_p
                         if isdir(t_h) == True:
                             # the t_p subdirectory exists
-                            # we use relative paths which prevents path errors
-                            # in loader.load<object>
-                            t_h = "../" + t_x + "/" + t_p
-                            self.mvcStructure["tier_resource"][t_p] = t_h
+                            self.mvcStructure["tier_resource"][t_p] = abspath(t_h)
                             # just one more nest for tier-2
                             if t_p == "sound":
                                 # build paths for convenience
-                                # we will save all paths relative to 'scripts'
                                 for t_v in self.mvcStructure["MVC_SoundTier"]:
                                     t_z = mvcRootDir + "/" + t_x + "/" + t_p + "/" + t_v
                                     if isdir(t_z) == True:
                                         # the t_v subdirectory exists
-                                        # we use relative paths .....
-                                        t_z = "../" + t_x + "/" + t_p + "/" + t_v
-                                        self.mvcStructure["tier_sound"][t_v] = t_z
+                                        self.mvcStructure["tier_sound"][t_v] = abspath(
+                                            t_z
+                                        )
                             elif t_p == "models":
                                 # build paths for convenience
-                                # we will save all paths relative to 'scripts'
                                 for t_v in self.mvcStructure["MVC_ModelsTier"]:
                                     t_z = mvcRootDir + "/" + t_x + "/" + t_p + "/" + t_v
                                     if isdir(t_z) == True:
                                         # the t_v subdirectory exists
-                                        # we use relative paths .....
-                                        t_z = "../" + t_x + "/" + t_p + "/" + t_v
-                                        self.mvcStructure["tier_models"][t_v] = t_z
+                                        self.mvcStructure["tier_models"][t_v] = abspath(
+                                            t_z
+                                        )
                             elif t_p == "text":
                                 # build paths for convenience
-                                # we will save all paths relative to 'scripts'
                                 for t_v in self.mvcStructure["MVC_TextTier"]:
                                     t_z = mvcRootDir + "/" + t_x + "/" + t_p + "/" + t_v
                                     if isdir(t_z) == True:
                                         # the t_v subdirectory exists
-                                        # we use relative paths .....
-                                        t_z = "../" + t_x + "/" + t_p + "/" + t_v
-                                        self.mvcStructure["tier_text"][t_v] = t_z
+                                        self.mvcStructure["tier_text"][t_v] = abspath(
+                                            t_z
+                                        )
             else:
                 self.mvcStructure[t_x] = NO_EXIST
                 # store the name of the missing component

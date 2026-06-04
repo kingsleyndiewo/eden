@@ -8,11 +8,22 @@
 # |------------------------------------------------|
 # | (C)2009 Funtrench Limited.            |
 # |------------------------------------------------|
+import sys
+from pathlib import Path
+
+for parent in Path(__file__).resolve().parents:
+    eden_lib = parent / "eden_lib"
+    if (eden_lib / "Eden").is_dir():
+        if str(eden_lib) not in sys.path:
+            sys.path.insert(0, str(eden_lib))
+        break
+
 from Eden.Eden3D.Worlds.Genesis import Genesis
 from Eden.Eden2D.Text2D import Text2D
 from direct.task import Task
 from panda3d.core import Point3
 from direct.interval.IntervalGlobal import *
+
 
 # --------------------------------------------------
 # A class to demonstrate the features of the Genesis
@@ -21,6 +32,7 @@ from direct.interval.IntervalGlobal import *
 # --------------------------------------------------
 class GenesisTestAdvanced(Genesis):
     "Extending the Genesis class for an actor in basic world"
+
     # ------------------CONSTRUCTOR------------------------
     # ----------------------------------------------------
     def __init__(self):  # constructor
