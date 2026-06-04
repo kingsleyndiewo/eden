@@ -6,12 +6,16 @@
 # | (C)2008 Funtrench PLC.            |
 # |------------------------------------------------|
 from EdenMaze import EdenMaze
+
+
 # entry point for the Eden Maze
 def main():
-    """ main module for EdenMaze """
+    """main module for EdenMaze"""
     # create the EdenMaze sample
-    EdenEvolves = EdenMaze()
+    eden_evolves = EdenMaze()
     # run the scene
-    run()
+    eden_evolves.run()
+
+
 if __name__ == "__main__":
     main()

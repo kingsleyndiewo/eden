@@ -6,12 +6,16 @@
 # | (C)2012 Intellect Alliance.            |
 # |------------------------------------------------|
 from TrafficSim import TrafficSim
+
+
 # entry point for the Eve client
 def main():
-    """ main module for any program """
+    """main module for any program"""
     # create the TrafficSim sample
-    EdenEvolves = TrafficSim()
+    eden_evolves = TrafficSim()
     # run the scene
-    run()
+    eden_evolves.run()
+
+
 if __name__ == "__main__":
     main()

@@ -6,11 +6,14 @@
 # | (C)2009 Funtrench Limited.            |
 # |------------------------------------------------|
 from CreationTest import CreationTest
+
 # entry point for the Creation client
 def main():
-    """ main module for any program """
+    """main module for any program"""
     EdenEvolves = CreationTest()
     # run the scene
     base.run()
+
+
 if __name__ == "__main__":
     main()

@@ -6,12 +6,15 @@
 # | (C)2009 Funtrench Limited.            |
 # |------------------------------------------------|
 from GenesisTestSpin import GenesisTestSpin
+
 # entry point for the Genesis client
 def main():
-    """ main module for any program """
+    """main module for any program"""
     # create the GenesisTest sample
     EdenEvolves = GenesisTestSpin()
     # run the scene
     base.run()
+
+
 if __name__ == "__main__":
     main()
